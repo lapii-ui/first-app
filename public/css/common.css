@@ -1,0 +1,15 @@
+*{
+    font-family: Lato;
+}
+.language{
+    padding: unset;
+}
+.language-custom{
+    width: 25px;
+    border-radius: unset !important;
+    margin-right: unset !important;
+}
+.W120PX{
+    min-width: unset !important;
+    width: 120px !important;
+}

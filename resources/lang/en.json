@@ -1,0 +1,11 @@
+{
+    "welcome,":"Welcome,",
+    "general":"General",
+    "dashboard":"Dashboard",
+    "setup":"Set Up",
+    "inventories":"Inventories",
+    "transactions":"Transactions",
+    "live_on":"Live On",
+    "reports":"Reports",
+    "others":"Others"
+}
