@@ -1,7 +1,14 @@
+<?php
+  $isRoot = Auth::user()->role == 0;
+  $isSuperAdmin = Auth::user()->role == 1;
+  $isAdmin = Auth::user()->role == 2;
+  $isUser = Auth::user()->role == 3;
+?>
+
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
       <div class="navbar nav_title" style="border: 0;">
-        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>F**k || k**F</span></a>
+        <a href="index.html" class="site_title"><img src="images/icon/coffee.svg" width="50px"><span> Coffee Heart</span></a>
       </div>
 
       <div class="clearfix"></div>
@@ -16,34 +23,40 @@
           <h3>@lang('general')</h3>
           <ul class="nav side-menu">
             <li><a><i class="fa fa-home"></i> @lang('dashboard') </a></li>
+
+            @if($isRoot)
             <li><a><i class="fa fa-sitemap"></i> @lang('setup') <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                  <li><a href="#level1_1">Level One</a>
-                  <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                  <li><a>Role & Permission<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li class="sub_menu"><a href="level2.html">Level Two</a>
+                      <li class="sub_menu">
+                        <a href="#level2_1">Role</a>
                       </li>
-                      <li><a href="#level2_1">Level Two</a>
+                      <li>
+                        <a href="#level2_2">Permission</a>
                       </li>
-                      <li><a href="#level2_2">Level Two</a>
+                      <li>
+                        <a href="#level2_2">User Privilage</a>
                       </li>
                     </ul>
                   </li>
-                  <li><a href="#level1_2">Level One</a>
-                  </li>
+                  <li><a href="#level1_1">Tables</a></li>
+                  <li><a href="#level1_1">Categories</a></li>
+                  <li><a href="#level1_1">Branch</a></li>
               </ul>
             </li>
+            @endif
+
             <li><a><i class="fa fa-desktop"></i> @lang('inventories') <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="general_elements.html">General Elements</a></li>
-                <li><a href="media_gallery.html">Media Gallery</a></li>
-                <li><a href="typography.html">Typography</a></li>
-                <li><a href="icons.html">Icons</a></li>
-                <li><a href="glyphicons.html">Glyphicons</a></li>
-                <li><a href="widgets.html">Widgets</a></li>
-                <li><a href="invoice.html">Invoice</a></li>
-                <li><a href="inbox.html">Inbox</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="general_elements.html">Warehouse</a></li>
+                <li><a href="media_gallery.html">Purchase</a></li>
+                <li><a href="typography.html">Transfer</a></li>
+                <li><a href="icons.html">Goods Recieve</a></li>
+                <li><a href="glyphicons.html">Goods Issue</a></li>
+                <li><a href="widgets.html">Staff Payable</a></li>
+                <li><a href="invoice.html">Others Payment</a></li>
+                <li><a href="inbox.html">Commission</a></li>
               </ul>
             </li>
             <li><a><i class="fa fa-table"></i> @lang('transactions') <span class="fa fa-chevron-down"></span></a>
@@ -59,11 +72,17 @@
           <ul class="nav side-menu">
             <li><a><i class="fa fa-bug"></i> @lang('reports') <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="e_commerce.html">E-commerce</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="project_detail.html">Project Detail</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
-                <li><a href="profile.html">Profile</a></li>
+                @if($isRoot || $isSuperAdmin || $isAdmin)
+                  <li><a href="#">Summary Sale Reports</a></li>
+                  <li><a href="#">Detail Sale Reports</a></li>
+                @endif
+                
+                @if($isRoot)
+                  <li><a href="#">Profit Sale Reports</a></li>
+                  <li><a href="#">Inventories Reports</a></li>
+                  <li><a href="#">Purchase Reports</a></li>
+                  <li><a href="#">Monthly Sale Reports</a></li>
+                @endif
               </ul>
             </li>
           </ul>

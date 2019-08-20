@@ -1,3 +1,8 @@
+<?php
+  $isRoot = Auth::user()->role == 0;
+  $isSuperAdmin = Auth::user()->role == 1;
+?>
+
 <div class="top_nav">
     <div class="nav_menu">
       <nav>
@@ -12,7 +17,7 @@
               <span class=" fa fa-angle-down"></span>
             </a>
             <ul class="dropdown-menu dropdown-usermenu pull-right">
-              <li><a href="javascript:;"> Profile</a></li>
+              <li><a href="{{ url('/profile') }}"> Profile</a></li>
               <li>
                 <a href="javascript:;">
                   <span class="badge bg-red pull-right">50%</span>
@@ -32,70 +37,72 @@
             </ul>
           </li>
 
-          <li role="presentation" class="dropdown">
-            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-              <i class="fa fa-bell-o"></i>
-              <span class="badge bg-green">6</span>
-            </a>
-            <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-              <li>
-                <a>
-                  <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                  <span>
-                    <span>John Smith</span>
-                    <span class="time">3 mins ago</span>
-                  </span>
-                  <span class="message">
-                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                  <span>
-                    <span>John Smith</span>
-                    <span class="time">3 mins ago</span>
-                  </span>
-                  <span class="message">
-                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                  <span>
-                    <span>John Smith</span>
-                    <span class="time">3 mins ago</span>
-                  </span>
-                  <span class="message">
-                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                  <span>
-                    <span>John Smith</span>
-                    <span class="time">3 mins ago</span>
-                  </span>
-                  <span class="message">
-                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                  </span>
-                </a>
-              </li>
-              <li>
-                <div class="text-center">
+          @if($isRoot || $isSuperAdmin)
+            <li role="presentation" class="dropdown">
+              <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-bell-o"></i>
+                <span class="badge bg-green">6</span>
+              </a>
+              <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                <li>
                   <a>
-                    <strong>See All Alerts</strong>
-                    <i class="fa fa-angle-right"></i>
+                    <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                    <span>
+                      <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                    </span>
+                    <span class="message">
+                      Film festivals used to be do-or-die moments for movie makers. They were where...
+                    </span>
                   </a>
-                </div>
-              </li>
-            </ul>
-          </li>
+                </li>
+                <li>
+                  <a>
+                    <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                    <span>
+                      <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                    </span>
+                    <span class="message">
+                      Film festivals used to be do-or-die moments for movie makers. They were where...
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                    <span>
+                      <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                    </span>
+                    <span class="message">
+                      Film festivals used to be do-or-die moments for movie makers. They were where...
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                    <span>
+                      <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                    </span>
+                    <span class="message">
+                      Film festivals used to be do-or-die moments for movie makers. They were where...
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <div class="text-center">
+                    <a>
+                      <strong>See All Alerts</strong>
+                      <i class="fa fa-angle-right"></i>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          @endif
 
           <li class="">
             <a href="#" class="languag dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

@@ -7,5 +7,5 @@
         </div>
     @endif
 
-    <div>@lang('dashboard_page')</div>
+    <div>{{ Auth::user()->name }}- role {{ Auth::user()->role }}</div>
 @endsection
