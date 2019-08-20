@@ -7,6 +7,26 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+##Follow me
+-please run php artisan db:seed
+-after is have 4 account for login
+-root account can see all 
+    root@admin.com
+    1234qwer
+-super admin and admin under permission of root account
+    super-admin@admin.com
+    1234qwer
+    
+    admin@admin.com
+    1234qwer
+    
+-user account
+    user@user.com
+    1234qwer
+    
+ -the left-side bar will hide depend on the user can see
+ -can click on account name top-right then it will display dropdown and click on profile it will display all the user login
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
