@@ -1,8 +1,8 @@
 <?php
-  $isRoot = Auth::user()->role == 0;
-  $isSuperAdmin = Auth::user()->role == 1;
-  $isAdmin = Auth::user()->role == 2;
-  $isUser = Auth::user()->role == 3;
+  $isRoot = Auth::user()->role == 1;
+  $isSuperAdmin = Auth::user()->role == 2;
+  $isAdmin = Auth::user()->role == 3;
+  $isUser = Auth::user()->role == 4;
 ?>
 
 <div class="col-md-3 left_col">

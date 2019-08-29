@@ -1,6 +1,6 @@
 <?php
-  $isRoot = Auth::user()->role == 0;
-  $isSuperAdmin = Auth::user()->role == 1;
+  $isRoot = Auth::user()->role == 1;
+  $isSuperAdmin = Auth::user()->role == 2;
 ?>
 
 <div class="top_nav">
@@ -17,7 +17,7 @@
               <span class=" fa fa-angle-down"></span>
             </a>
             <ul class="dropdown-menu dropdown-usermenu pull-right">
-              <li><a href="{{ url('/profile') }}"> Profile</a></li>
+              <li><a href="{{ url('get-profile') }}"> Profile</a></li>
               <li>
                 <a href="javascript:;">
                   <span class="badge bg-red pull-right">50%</span>

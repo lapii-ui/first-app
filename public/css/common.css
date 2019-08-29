@@ -13,3 +13,7 @@
     min-width: unset !important;
     width: 120px !important;
 }
+.remove-width{
+    max-width: unset;
+    width: 100%;
+}
