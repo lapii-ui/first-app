@@ -20,4 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('localization/{locale}', 'LanguageController@SwitchLanguage');
 
-Route::resource('/profile', 'UserController');
+Route::get('get-profile', 'UserController@get_user');
+Route::get('create-profile', 'UserController@create');
+Route::post('add-profile', 'UserController@add_user');
+
+Route::resource('/front', 'FrontEndController');

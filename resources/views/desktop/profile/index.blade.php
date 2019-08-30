@@ -18,10 +18,10 @@
                 <td>{{ $pro->name }}</td>
                 <td>{{ $pro->email }}</td>
                 <td>
-                    @if($pro->role == 0) <span class="">Root</span>
-                    @elseif($pro->role == 1) <span class="">Super Admin</span>
-                    @elseif($pro->role == 2) <span class="">Admin</span>
-                    @elseif($pro->role == 3) <span class="">User</span>
+                    @if($pro->role == 1) <span class="">Root</span>
+                    @elseif($pro->role == 2) <span class="">Super Admin</span>
+                    @elseif($pro->role == 3) <span class="">Admin</span>
+                    @elseif($pro->role == 4) <span class="">User</span>
                     @endif
                 </td>
                 <td class="text-right">
