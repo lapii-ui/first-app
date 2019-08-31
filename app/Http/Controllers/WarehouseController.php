@@ -12,4 +12,7 @@ class WarehouseController extends Controller
 
         return view('desktop.warehouse.index', compact('warehouse'));
     }
+    public function create_warehouse(){
+        return view('desktop.warehouse.create');
+    }
 }
