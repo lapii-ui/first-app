@@ -18,18 +18,20 @@
                 <td>{{ $pro->name }}</td>
                 <td>{{ $pro->email }}</td>
                 <td>
-                    @if($pro->role == 1) <span class="">Root</span>
-                    @elseif($pro->role == 2) <span class="">Super Admin</span>
-                    @elseif($pro->role == 3) <span class="">Admin</span>
-                    @elseif($pro->role == 4) <span class="">User</span>
+                    @if($pro->role == 0) <span class="">Root</span>
+                    @elseif($pro->role == 1) <span class="">Super Admin</span>
+                    @elseif($pro->role == 2) <span class="">Admin</span>
+                    @elseif($pro->role == 3) <span class="">User</span>
                     @endif
                 </td>
                 <td class="text-right">
-                    <a href="#">Edit</a> ||
-                    <a href="#" class="text-danger">Delete</a>
+                    <a href="{{ url('edit-profile/'.$pro->id) }}"><i class="far fa-edit"></i></a> ||
+                    <a href="{{ url('delete-profile/'.$pro->id) }}" class="text-danger"><i class="fas fa-trash"></i></a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
 @stop
+
+{{-- @include('desktop.profile._modal-edit-profile') --}}

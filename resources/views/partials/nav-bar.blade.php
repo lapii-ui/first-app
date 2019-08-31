@@ -1,6 +1,6 @@
 <?php
-  $isRoot = Auth::user()->role == 1;
-  $isSuperAdmin = Auth::user()->role == 2;
+  $isRoot = Auth::user()->role == 0;
+  $isSuperAdmin = Auth::user()->role == 1;
 ?>
 
 <div class="top_nav">
@@ -13,7 +13,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="">
             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <i class="fa fa-user-circle-o"></i> <span class="text-capitalize">{{ Auth::user()->name }}</span>
+              <i class="far fa-user-circle"></i> <span class="text-capitalize">{{ Auth::user()->name }}</span>
               <span class=" fa fa-angle-down"></span>
             </a>
             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -27,7 +27,7 @@
               <li><a href="javascript:;">Help</a></li>
               <li>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                  <i class="fa fa-sign-out pull-right"></i> Log Out
+                  <i class="fas fa-sign-out-alt pull-right"></i> Log Out
                   
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
@@ -40,7 +40,7 @@
           @if($isRoot || $isSuperAdmin)
             <li role="presentation" class="dropdown">
               <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-bell-o"></i>
+                <i class="far fa-bell"></i>
                 <span class="badge bg-green">6</span>
               </a>
               <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">

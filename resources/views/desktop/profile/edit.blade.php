@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="row">
-        <div class="title-content">User Information</div>
-        <form action="{{ url('add-profile') }}" method="POST">
+        <div class="title-content">Edit User Information</div>
+        <form action="{{ url('update-profile/'.$profile->id) }}" method="POST">
             @csrf
             <div class="form-group row">
                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                 <div class="col-md-6">
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autofocus>
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $profile->name }}">
                 </div>
             </div>
 
@@ -17,7 +17,7 @@
                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                 <div class="col-md-6">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $profile->email }}">
                 </div>
             </div>
 
@@ -25,7 +25,7 @@
                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                 <div class="col-md-6">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autofocus>
                 </div>
             </div>
 
@@ -41,17 +41,17 @@
                 <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
 
                 <div class="col-md-6">
-                    <select name="role" id="role" class="form-control">
+                    <select name="role" id="role" class="form-control" >
                         <option value="00"></option>
                         {{-- <option value="0">Root</option> --}}
-                        <option value="1">Super Admin</option>
-                        <option value="2">Admin</option>
-                        <option value="3">User</option>
+                        <option value="1" {{ $profile->role == 1 ? 'selected' : '' }}>Super Admin</option>
+                        <option value="2" {{ $profile->role == 2 ? 'selected' : '' }}>Admin</option>
+                        <option value="3" {{ $profile->role == 3 ? 'selected' : '' }}>User</option>
                     </select>
                 </div>
             </div>
 
-            <button type="submit">@lang('submit')</button>
+            <button type="submit">@lang('update')</button>
         </form>
     </div>
 @stop

@@ -10,7 +10,7 @@
     <title></title>
 
     @include('partials._style-include')
-    
+    @toastr_css
     <!-- Custom Theme Style -->
     <link href="/css/custom.min.css" rel="stylesheet">
     <link href="/css/common.css" rel="stylesheet">
@@ -43,4 +43,7 @@
     <script src="/js/custom.min.js"></script>
 	
   </body>
+  {{-- @jquery --}}
+  @toastr_js
+  @toastr_render
 </html>

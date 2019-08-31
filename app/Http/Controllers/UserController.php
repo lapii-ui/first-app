@@ -24,11 +24,42 @@ class UserController extends Controller
 
     public function add_user(UserValidationRequest $request){
         $params = $request->all();
-        $params['role'] = (int)$request->get('role');
+        $params['role'] = (int)$request->get('role') + 1;
+        $params['password'] = bcrypt($request->password);
         
         // dd($params);
 
         User::create($params);
+        toastr()->success('Create user successfully!', 'Create User', ['timeOut' => 1300]);
+
+        return redirect('get-profile');
+    }
+
+    public function edit_user($id){
+        $profile = User::where('id', '=', $id)->first();
+
+        return view('desktop.profile.edit', compact('profile'));
+    }
+
+    public function update_user(UserValidationRequest $request, $id){
+        $profile = User::where('id', '=', $id)->first();
+
+        $params = $request->all();
+        $params['role'] = (int)$request->get('role') + 1;
+        $params['password'] = bcrypt($request->password);
+        
+        $profile->update($params);
+        toastr()->success('Update user successfully!', 'User Form', ['timeOut' => 1300]);
+
+        return redirect('get-profile');
+    }
+    
+    public function delete_user($id){
+        $profile = User::where('id', '=', $id)->first();
+
+        $profile->delete();
+        toastr()->success('Deleted user successfully!', 'User Form', ['timeOut' => 1300]);
+
         return redirect('get-profile');
     }
 }

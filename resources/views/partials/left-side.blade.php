@@ -1,14 +1,14 @@
 <?php
-  $isRoot = Auth::user()->role == 1;
-  $isSuperAdmin = Auth::user()->role == 2;
-  $isAdmin = Auth::user()->role == 3;
-  $isUser = Auth::user()->role == 4;
+  $isRoot = Auth::user()->role == 0;
+  $isSuperAdmin = Auth::user()->role == 1;
+  $isAdmin = Auth::user()->role == 2;
+  $isUser = Auth::user()->role == 3;
 ?>
 
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
       <div class="navbar nav_title" style="border: 0;">
-        <a href="index.html" class="site_title"><img src="images/icon/coffee.svg" width="50px"><span> Coffee Heart</span></a>
+        <a href="index.html" class="site_title"><img src="images/icon/coffee.svg" width="50px"><span></span></a>
       </div>
 
       <div class="clearfix"></div>
