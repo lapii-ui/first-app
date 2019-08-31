@@ -29,5 +29,11 @@ Route::get('delete-profile/{id}', 'UserController@delete_user');
 
 Route::get('get-warehouse', 'WarehouseController@get_warehouse');
 Route::get('create-warehouse', 'WarehouseController@create_warehouse');
+Route::post('add-warehouse', 'WarehouseController@add_warehouse');
+Route::get('edit-warehouse/{id}', 'WarehouseController@edit_warehouse');
+Route::post('update-warehouse/{id}', 'WarehouseController@update_warehouse');
+Route::get('delete-warehouse/{id}', 'WarehouseController@delete_warehouse');
+
+Route::resource('category', 'CategoriesController');
 
 Route::resource('/front', 'FrontEndController');
