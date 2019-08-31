@@ -43,7 +43,7 @@
     <script src="/js/custom.min.js"></script>
 	
   </body>
-  {{-- @jquery --}}
+  
   @toastr_js
   @toastr_render
 </html>

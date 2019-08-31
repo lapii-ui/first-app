@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="title-content-info">List of User Login <a href="{{ url('create-profile') }}"><i class="far fa-plus-square pull-right" style="font-size: 25px;"></i></a></div>
+    <div class="title-content-info">List of User Login <a href="{{ url('create-profile') }}"><i class="far fa-plus-square icon-create pull-right"></i></a></div>
     <div class="row col-md-9 well">
         <table class="table table-bordered">
             <thead>

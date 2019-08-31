@@ -22,12 +22,12 @@
         <div class="menu_section">
           <h3>@lang('general')</h3>
           <ul class="nav side-menu">
-            <li><a><i class="fa fa-home"></i> @lang('dashboard') </a></li>
+            <li><a class="txt-upper"><i class="fas fa-chart-pie fa-icon"></i> @lang('dashboard') </a></li>
 
             @if($isRoot)
-            <li><a><i class="fa fa-sitemap"></i> @lang('setup') <span class="fa fa-chevron-down"></span></a>
+            <li><a class="txt-upper"><i class="fas fa-sliders-h fa-icon"></i> @lang('setup') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
-                  <li><a>Role & Permission<span class="fa fa-chevron-down"></span></a>
+                  <li><a>Role & Permission<span class="fas fa-chevron-down fa-arrow-right-import"></span></a>
                     <ul class="nav child_menu">
                       <li class="sub_menu">
                         <a href="#level2_1">Role</a>
@@ -47,7 +47,7 @@
             </li>
             @endif
 
-            <li><a><i class="fa fa-desktop"></i> @lang('inventories') <span class="fa fa-chevron-down"></span></a>
+            <li><a class="txt-upper"><i class="fas fa-layer-group fa-icon"></i> @lang('inventories') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
                 <li><a href="{{ url('get-warehouse') }}">Warehouse</a></li>
                 <li><a href="media_gallery.html">Purchase</a></li>
@@ -59,7 +59,7 @@
                 <li><a href="inbox.html">Commission</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-table"></i> @lang('transactions') <span class="fa fa-chevron-down"></span></a>
+            <li><a class="txt-upper"><i class="fas fa-tags fa-icon"></i> @lang('transactions') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
                 <li><a href="tables.html">Tables</a></li>
                 <li><a href="tables_dynamic.html">Table Dynamic</a></li>
@@ -70,7 +70,7 @@
         <div class="menu_section">
           <h3>@lang('live_on')</h3>
           <ul class="nav side-menu">
-            <li><a><i class="fa fa-bug"></i> @lang('reports') <span class="fa fa-chevron-down"></span></a>
+            <li><a class="txt-upper"><i class="far fa-chart-bar fa-icon"></i> @lang('reports') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
                 @if($isRoot || $isSuperAdmin || $isAdmin)
                   <li><a href="#">Summary Sale Reports</a></li>
