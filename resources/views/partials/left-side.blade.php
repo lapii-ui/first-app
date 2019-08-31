@@ -1,14 +1,14 @@
 <?php
-  $isRoot = Auth::user()->role == 1;
-  $isSuperAdmin = Auth::user()->role == 2;
-  $isAdmin = Auth::user()->role == 3;
-  $isUser = Auth::user()->role == 4;
+  $isRoot = Auth::user()->role == 0;
+  $isSuperAdmin = Auth::user()->role == 1;
+  $isAdmin = Auth::user()->role == 2;
+  $isUser = Auth::user()->role == 3;
 ?>
 
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
       <div class="navbar nav_title" style="border: 0;">
-        <a href="index.html" class="site_title"><img src="images/icon/coffee.svg" width="50px"><span> Coffee Heart</span></a>
+        <a href="index.html" class="site_title"><img src="images/icon/coffee.svg" width="50px"><span></span></a>
       </div>
 
       <div class="clearfix"></div>
@@ -22,12 +22,12 @@
         <div class="menu_section">
           <h3>@lang('general')</h3>
           <ul class="nav side-menu">
-            <li><a><i class="fa fa-home"></i> @lang('dashboard') </a></li>
+            <li><a class="txt-upper"><i class="fas fa-chart-pie fa-icon"></i> @lang('dashboard') </a></li>
 
             @if($isRoot)
-            <li><a><i class="fa fa-sitemap"></i> @lang('setup') <span class="fa fa-chevron-down"></span></a>
+            <li><a class="txt-upper"><i class="fas fa-sliders-h fa-icon"></i> @lang('setup') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
-                  <li><a>Role & Permission<span class="fa fa-chevron-down"></span></a>
+                  <li><a>Role & Permission<span class="fas fa-chevron-down fa-arrow-right-import"></span></a>
                     <ul class="nav child_menu">
                       <li class="sub_menu">
                         <a href="#level2_1">Role</a>
@@ -47,9 +47,9 @@
             </li>
             @endif
 
-            <li><a><i class="fa fa-desktop"></i> @lang('inventories') <span class="fa fa-chevron-down"></span></a>
+            <li><a class="txt-upper"><i class="fas fa-layer-group fa-icon"></i> @lang('inventories') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
-                <li><a href="general_elements.html">Warehouse</a></li>
+                <li><a href="{{ url('get-warehouse') }}">Warehouse</a></li>
                 <li><a href="media_gallery.html">Purchase</a></li>
                 <li><a href="typography.html">Transfer</a></li>
                 <li><a href="icons.html">Goods Recieve</a></li>
@@ -59,7 +59,7 @@
                 <li><a href="inbox.html">Commission</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-table"></i> @lang('transactions') <span class="fa fa-chevron-down"></span></a>
+            <li><a class="txt-upper"><i class="fas fa-tags fa-icon"></i> @lang('transactions') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
                 <li><a href="tables.html">Tables</a></li>
                 <li><a href="tables_dynamic.html">Table Dynamic</a></li>
@@ -70,7 +70,7 @@
         <div class="menu_section">
           <h3>@lang('live_on')</h3>
           <ul class="nav side-menu">
-            <li><a><i class="fa fa-bug"></i> @lang('reports') <span class="fa fa-chevron-down"></span></a>
+            <li><a class="txt-upper"><i class="far fa-chart-bar fa-icon"></i> @lang('reports') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
                 @if($isRoot || $isSuperAdmin || $isAdmin)
                   <li><a href="#">Summary Sale Reports</a></li>

@@ -23,5 +23,10 @@ Route::get('localization/{locale}', 'LanguageController@SwitchLanguage');
 Route::get('get-profile', 'UserController@get_user');
 Route::get('create-profile', 'UserController@create');
 Route::post('add-profile', 'UserController@add_user');
+Route::get('edit-profile/{id}', 'UserController@edit_user');
+Route::post('update-profile/{id}', 'UserController@update_user');
+Route::get('delete-profile/{id}', 'UserController@delete_user');
+
+Route::get('get-warehouse', 'WarehouseController@get_warehouse');
 
 Route::resource('/front', 'FrontEndController');

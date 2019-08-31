@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Silber\Bouncer\BouncerServiceProvider::class,
+        Yoeunes\Toastr\ToastrServiceProvider::class,
 
         /*
          * Package Service Providers...
