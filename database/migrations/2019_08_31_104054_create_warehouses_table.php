@@ -15,7 +15,7 @@ class CreateWarehousesTable extends Migration
     {
         Schema::create('warehouses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('code');
+            $table->string('code');
             $table->string('name');
             $table->text('location');
             $table->decimal('stock_in', 18,2);
