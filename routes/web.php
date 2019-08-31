@@ -27,4 +27,6 @@ Route::get('edit-profile/{id}', 'UserController@edit_user');
 Route::post('update-profile/{id}', 'UserController@update_user');
 Route::get('delete-profile/{id}', 'UserController@delete_user');
 
+Route::get('get-warehouse', 'WarehouseController@get_warehouse');
+
 Route::resource('/front', 'FrontEndController');

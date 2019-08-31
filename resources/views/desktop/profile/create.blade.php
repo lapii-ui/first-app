@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="title-content">User Information</div>
+    <div class="title-content-info">User Information</div>
+    <div class="row col-md-9 well">
         <form action="{{ url('add-profile') }}" method="POST">
             @csrf
             <div class="form-group row">
@@ -50,8 +50,9 @@
                     </select>
                 </div>
             </div>
-
-            <button type="submit">@lang('submit')</button>
+            <div class="col-md-10 remove-pdd">
+                <button type="submit" class="remove-mg pull-right">@lang('submit')</button>
+            </div>
         </form>
     </div>
 @stop

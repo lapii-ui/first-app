@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="title-content">Edit User Information</div>
+    <div class="title-content-info">Edit User Information</div>
+    <div class="row col-md-9 well">
         <form action="{{ url('update-profile/'.$profile->id) }}" method="POST">
             @csrf
             <div class="form-group row">
@@ -51,7 +51,9 @@
                 </div>
             </div>
 
-            <button type="submit">@lang('update')</button>
+            <div class="col-md-10 remove-pdd">
+                <button type="submit" class="pull-right remove-mg">@lang('update')</button>
+            </div>
         </form>
     </div>
 @stop

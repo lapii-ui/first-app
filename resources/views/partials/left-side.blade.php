@@ -49,7 +49,7 @@
 
             <li><a><i class="fa fa-desktop"></i> @lang('inventories') <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="general_elements.html">Warehouse</a></li>
+                <li><a href="{{ url('get-warehouse') }}">Warehouse</a></li>
                 <li><a href="media_gallery.html">Purchase</a></li>
                 <li><a href="typography.html">Transfer</a></li>
                 <li><a href="icons.html">Goods Recieve</a></li>
