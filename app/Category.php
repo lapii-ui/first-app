@@ -12,4 +12,9 @@ class Category extends Model
     protected $fillable = [
         'name', 'text_color', 'background_color', 'icon', 'remark',
     ];
+
+    public function sub1_categories() {
+        return $this->hasMany(Sub1Category::class, 'cat_id', 'id');
+    }
+    
 }

@@ -1,43 +1,44 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="title-content-info">Category Information</div>
+    <div class="title-content-info">Edit Sub Category I</div>
     <div class="row col-md-9 well">
-        <form action="{{ url('update-category/'.$categories->id) }}" method="POST">
+        <form action="{{ url('update-sub-i/'.$sub_i->id) }}" method="POST">
             @csrf
+            <input id="cat_id" type="hidden" name="cat_id" value="{{ request()->get('id') }}">
             <div class="form-group row">
                 <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('Name') }}</label>
 
                 <div class="col-md-6">
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $categories->name }}">
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $sub_i->name }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('Text Color') }}</label>
 
                 <div class="col-md-6">
-                    <input id="text_color" type="color" class="form-control text_color @error('text_color') is-invalid @enderror" name="text_color" value="{{ $categories->text_color }}">
+                    <input id="text_color" type="color" class="form-control text_color @error('text_color') is-invalid @enderror" name="text_color" value="{{ $sub_i->text_color }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('Background Color') }}</label>
 
                 <div class="col-md-6">
-                    <input id="background_color" type="color" class="form-control background_color @error('background_color') is-invalid @enderror" name="background_color" value="{{ $categories->background_color }}">
+                    <input id="background_color" type="color" class="form-control background_color @error('background_color') is-invalid @enderror" name="background_color" value="{{ $sub_i->background_color }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('Icon') }}</label>
 
                 <div class="col-md-6">
-                    <input id="icon" type="text" class="form-control icon @error('icon') is-invalid @enderror" name="icon" value="{{ $categories->icon }}">
+                    <input id="icon" type="text" class="form-control icon @error('icon') is-invalid @enderror" name="icon" value="{{ $sub_i->icon }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="location" class="col-md-3 col-form-label text-md-right">{{ __('Remark') }}</label>
 
                 <div class="col-md-6">
-                    <textarea name="remark" id="remark" class="form-control">{{ $categories->remark }}</textarea>
+                    <textarea name="remark" id="remark" class="form-control">{{ $sub_i->remark }}</textarea>
                 </div>
             </div>
 
@@ -54,3 +55,7 @@
         </form>
     </div>
 @stop
+
+@section('js')
+    <script src="{{ asset('js/desktop/_category.js') }}"></script>
+@endsection
