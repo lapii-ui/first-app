@@ -52,9 +52,6 @@ class CategoriesController extends Controller
         //
     }
 
-    public function get_sub_i(){
-        return view();
-    }
     public function create_sub_i(){
         return view('desktop.categories.sub-i.create');
     }
