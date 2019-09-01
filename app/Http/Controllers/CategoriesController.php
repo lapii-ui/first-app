@@ -88,7 +88,7 @@ class CategoriesController extends Controller
     }
     public function update_sub_ii(Request $request, $id)
     {
-        dd($request->all());
+        //
     }
     public function delete_sub_ii($id)
     {
