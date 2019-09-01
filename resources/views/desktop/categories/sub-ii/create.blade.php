@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="title-content-info">Category Information</div>
+    <div class="title-content-info">Sub Category II Information</div>
     <div class="row col-md-9 well">
-        <form action="{{ url('category') }}" method="POST">
+        <form action="{{ url('add-sub-ii') }}" method="POST">
             @csrf
+            <input id="cat_id" type="hidden" name="cat_id" value="{{ request()->get('id') }}">
+            <input id="sub_i_id" type="hidden" name="sub_i_id" value="{{ request()->get('sub') }}">
             <div class="form-group row">
                 <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('Name') }}</label>
 

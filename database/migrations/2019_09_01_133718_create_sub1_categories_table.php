@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubICategoriesTable extends Migration
+class CreateSub1CategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSubICategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sub_i_categories', function (Blueprint $table) {
+        Schema::create('sub1_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('cat_id');
             $table->string('name');
@@ -32,6 +32,6 @@ class CreateSubICategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_i_categories');
+        Schema::dropIfExists('sub1_categories');
     }
 }

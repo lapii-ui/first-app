@@ -3,83 +3,97 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
+use App\Http\Requests\{
+    CategoryValidRequest,
+    SubIValidationRequest,
+    SubIIValidationRequest
+};
+use App\{
+    Category,
+    Sub1Category,
+    Sub2Category
+};
 
 class CategoriesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        $categoies = Category::all();
-        return view('desktop.categories.index', compact('categoies'));
-    }
+        $categories = Category::all();
+        $sub_i = Sub1Category::all();
+        $sub_ii = Sub2Category::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+        return view('desktop.categories.index', compact('categories', 'sub_i', 'sub_ii'));
+    }
+    
     public function create()
     {
         return view('desktop.categories.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(CategoryValidRequest $request)
     {
-        //
+        Category::create($request->all());
+        return redirect('category');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
+    {
+        //
+    }
+
+    public function get_sub_i(){
+        return view();
+    }
+    public function create_sub_i(){
+        return view('desktop.categories.sub-i.create');
+    }
+    public function add_sub_i(SubIValidationRequest $request){
+        Sub1Category::create($request->all());
+
+        return redirect('category');
+    }
+    public function edit_sub_i($id)
+    {
+        //
+    }
+    public function update_sub_i(Request $request, $id)
+    {
+        //
+    }
+    public function delete_sub_i($id)
+    {
+        //
+    }
+
+    public function create_sub_ii(){
+        return view('desktop.categories.sub-ii.create');
+    }
+    public function add_sub_ii(SubIIValidationRequest $request){
+        // dd($request->all());
+        Sub2Category::create($request->all());
+
+        return redirect('category');
+    }
+    public function edit_sub_ii($id)
+    {
+        //
+    }
+    public function update_sub_ii(Request $request, $id)
+    {
+        //
+    }
+    public function delete_sub_ii($id)
     {
         //
     }

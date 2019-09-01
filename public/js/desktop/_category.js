@@ -107,10 +107,26 @@ function () {
   }
 
   _createClass(Category, [{
-    key: "selectChange",
-    value: function selectChange($element, $param) {
-      $element.on('change', function () {
-        console.log('changed');
+    key: "selectChangeColor",
+    value: function selectChangeColor($element, $param) {
+      $element.on('input', function () {
+        $color = $element.val();
+        $param.css('color', $color);
+      });
+    }
+  }, {
+    key: "selectChangeBackground",
+    value: function selectChangeBackground($element, $param) {
+      $element.on('input', function () {
+        $color = $element.val();
+        $param.css('background-color', $color);
+      });
+    }
+  }, {
+    key: "selectChangeIcon",
+    value: function selectChangeIcon($element, $param) {
+      $element.on('input', function () {
+        $color = $element.val(); // $param.attr('style="color:'+ $color +'; background-color:'+ $color +'"')
       });
     }
   }]);
@@ -119,9 +135,9 @@ function () {
 }();
 
 var category = new Category();
-category.selectChange($('.text_color'));
-category.selectChange($('#background_color'));
-category.selectChange($('#icon'));
+category.selectChangeColor($('.text_color'), $('.text-color'));
+category.selectChangeBackground($('.background_color'), $('.background'));
+category.selectChangeIcon($('.icon'));
 
 /***/ }),
 

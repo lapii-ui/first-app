@@ -35,5 +35,10 @@ Route::post('update-warehouse/{id}', 'WarehouseController@update_warehouse');
 Route::get('delete-warehouse/{id}', 'WarehouseController@delete_warehouse');
 
 Route::resource('category', 'CategoriesController');
+Route::get('create-sub-i', 'CategoriesController@create_sub_i');
+Route::post('add-sub-i', 'CategoriesController@add_sub_i');
+
+Route::get('create-sub-ii', 'CategoriesController@create_sub_ii');
+Route::post('add-sub-ii', 'CategoriesController@add_sub_ii');
 
 Route::resource('/front', 'FrontEndController');
