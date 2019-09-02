@@ -30,7 +30,7 @@ class UserController extends Controller
         // dd($params);
 
         User::create($params);
-        toastr()->success('Create user successfully!', 'Create User', ['timeOut' => 1300]);
+        toastr()->success('Create user successfully!', 'Create User', ['timeOut' => 1500]);
 
         return redirect('get-profile');
     }
@@ -49,7 +49,7 @@ class UserController extends Controller
         $params['password'] = bcrypt($request->password);
         
         $profile->update($params);
-        toastr()->success('Update user successfully!', 'User Form', ['timeOut' => 1300]);
+        toastr()->success('Update user successfully!', 'User Form', ['timeOut' => 1500]);
 
         return redirect('get-profile');
     }
@@ -58,7 +58,7 @@ class UserController extends Controller
         $profile = User::where('id', '=', $id)->first();
 
         $profile->delete();
-        toastr()->success('Deleted user successfully!', 'User Form', ['timeOut' => 1300]);
+        toastr()->success('Deleted user successfully!', 'User Form', ['timeOut' => 1500]);
 
         return redirect('get-profile');
     }

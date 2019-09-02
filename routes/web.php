@@ -29,6 +29,26 @@ Route::get('delete-profile/{id}', 'UserController@delete_user');
 
 Route::get('get-warehouse', 'WarehouseController@get_warehouse');
 Route::get('create-warehouse', 'WarehouseController@create_warehouse');
+Route::post('add-warehouse', 'WarehouseController@add_warehouse');
+Route::get('edit-warehouse/{id}', 'WarehouseController@edit_warehouse');
+Route::post('update-warehouse/{id}', 'WarehouseController@update_warehouse');
+Route::get('delete-warehouse/{id}', 'WarehouseController@delete_warehouse');
+
+Route::resource('category', 'CategoriesController');
+Route::post('update-category/{id}', 'CategoriesController@update_category');
+Route::get('delete-category/{id}', 'CategoriesController@delete_category');
+
+Route::get('create-sub-i', 'CategoriesController@create_sub_i');
+Route::post('add-sub-i', 'CategoriesController@add_sub_i');
+Route::get('edit-sub-i/{id}', 'CategoriesController@edit_sub_i');
+Route::post('update-sub-i/{id}', 'CategoriesController@update_sub_i');
+Route::get('delete-sub-i/{id}', 'CategoriesController@delete_sub_i');
+
+Route::get('create-sub-ii', 'CategoriesController@create_sub_ii');
+Route::post('add-sub-ii', 'CategoriesController@add_sub_ii');
+Route::get('edit-sub-ii/{id}', 'CategoriesController@edit_sub_ii');
+Route::post('update-sub-ii/{id}', 'CategoriesController@update_sub_ii');
+Route::get('delete-sub-ii/{id}', 'CategoriesController@delete_sub_ii');
 
 Route::get('get-grouptable', 'TableController@get_grouptable');
 Route::get('create-grouptable', 'TableController@create_grouptable');
