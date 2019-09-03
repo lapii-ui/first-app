@@ -131,18 +131,18 @@ function () {
     }
   }, {
     key: "toggleTable",
-    value: function toggleTable($element) {
+    value: function toggleTable($element, param) {
       $element.on("click", function () {
         var obj = $(this);
 
         if (obj.hasClass("glyphicon-plus")) {
           obj.hide();
           obj.next().show();
-          obj.parent().parent().next().show("slow");
+          obj.parent().parent().nextAll(param).show("slow");
         } else {
           obj.hide();
           obj.prev().show();
-          obj.parent().parent().next().hide();
+          obj.parent().parent().nextAll(param).hide();
         }
       });
     }
@@ -155,7 +155,8 @@ var category = new Category();
 category.selectChangeColor($('.text_color'), $('.text-color'));
 category.selectChangeBackground($('.background_color'), $('.background'));
 category.selectChangeIcon($('.icon'));
-category.toggleTable($('.toggle-tr'));
+category.toggleTable($('.toggle-tr-category'), '.sub-i-toggle');
+category.toggleTable($('.toggle-tr-sub'), '.sub-ii-toggle');
 
 /***/ }),
 

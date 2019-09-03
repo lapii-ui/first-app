@@ -17,10 +17,10 @@
             </thead>
             <tbody>
             @foreach($categories as $index => $categ)
-                <tr>
-                    <td class="text-center align-middle">
-                        <span class="glyphicon glyphicon-plus toggle-tr"></span>
-                        <span class="glyphicon glyphicon-minus toggle-tr" style="display:none"></span>
+                <tr class="tb-category">
+                    <td class="text-left align-middle">
+                        <span class="glyphicon glyphicon-plus toggle-tr-category"></span>
+                        <span class="glyphicon glyphicon-minus toggle-tr-category" style="display:none"></span>
                         {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                     </td>
                     <td class="text-center align-middle">{{ $categ->name }}</td>
@@ -36,10 +36,10 @@
                 </tr>
 
                 @foreach ($categ->sub1_categories as $index => $sub)
-                    <tr style="background-color:#ccc;">
+                    <tr style="background-color:#ccc; display:none;" class="sub-i-toggle">
                         <td class="text-right align-middle">
-                            <span class="glyphicon glyphicon-plus toggle-tr"></span>
-                            <span class="glyphicon glyphicon-minus toggle-tr" style="display:none"></span>
+                            <span class="glyphicon glyphicon-plus toggle-tr-sub"></span>
+                            <span class="glyphicon glyphicon-minus toggle-tr-sub" style="display:none"></span>
                             {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                         </td>
                         <td class="text-center align-middle">{{ $sub->name }}</td>
@@ -55,7 +55,7 @@
                     </tr>
 
                     @foreach($sub->sub2_categories as $index => $sub2)
-                    <tr style="background-color:#ccc;">
+                    <tr style="background-color:#ccc; display:none;" class="sub-ii-toggle">
                         <td class="text-right align-middle">
                             {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                         </td>
