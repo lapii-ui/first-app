@@ -50,4 +50,14 @@ Route::get('edit-sub-ii/{id}', 'CategoriesController@edit_sub_ii');
 Route::post('update-sub-ii/{id}', 'CategoriesController@update_sub_ii');
 Route::get('delete-sub-ii/{id}', 'CategoriesController@delete_sub_ii');
 
+Route::resource('company', 'CompanyController');
+Route::post('update-company/{id}', 'CompanyController@update_company');
+Route::get('delete-company/{id}', 'CompanyController@delete_company');
+
+Route::get('create-branch', 'CompanyController@create_branch');
+Route::post('add-branch', 'CompanyController@add_branch');
+Route::get('edit-branch/{id}', 'CompanyController@edit_branch');
+Route::post('update-branch/{id}', 'CompanyController@update_branch');
+Route::get('delete-branch/{id}', 'CompanyController@delete_branch');
+
 Route::resource('/front', 'FrontEndController');

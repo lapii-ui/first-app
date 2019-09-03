@@ -42,7 +42,7 @@
                   </li>
                   <li><a href="#level1_1">Tables</a></li>
                   <li><a href="{{ url('category') }}">Categories</a></li>
-                  <li><a href="#level1_1">Branch</a></li>
+                  <li><a href="{{ url('company') }}">Company</a></li>
               </ul>
             </li>
             @endif
