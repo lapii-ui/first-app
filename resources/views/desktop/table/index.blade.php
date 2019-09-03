@@ -14,14 +14,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($group_table as $index => $tab)
+                @foreach($grouptable as $index => $tab)
                 <tr>
                     <td class="text-center align-middle">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</td>
                     <td class="text-center align-middle">{{ $tab->name }}</td>
                     <td class="text-center align-middle">{{ $tab->type }}</td>
                     <td class="text-center align-middle">{{ $tab->remark }}</td>
                     <td class="text-center align-middle">
-                        <a href="{{ url('edit-grouptable/'.$tab->id) }}"><i class="far fa-edit"></i></a> |
+                        <a href="{{ url('create-subtable/'.$tab->id) }}"><i class="fas fa-arrow-alt-circle-right"></i></a>
+                        &nbsp;
+                        <a href="{{ url('edit-grouptable/'.$tab->id) }}"><i class="far fa-edit"></i></a>
+                        &nbsp;
                         <a href="#" class="text-danger"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>

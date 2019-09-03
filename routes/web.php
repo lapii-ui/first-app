@@ -56,4 +56,6 @@ Route::post('add-grouptable', 'TableController@add_grouptable');
 Route::get('edit-grouptable/{id}', 'TableController@edit_grouptable');
 Route::post('update-grouptable/{id}', 'TableController@update_grouptable');
 
+Route::get('create-subtable/{id}', 'TableController@create_subtable');
+
 Route::resource('/front', 'FrontEndController');
