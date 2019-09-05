@@ -1,6 +1,9 @@
+import common from './_common';
+
 class Category {
     constructor() {
-
+        common.toggleTable($('.toggle-tr-category'), '.category-toggle', '.sub-ii-toggle');
+        common.toggleTable($('.toggle-tr-sub'), '.sub-i-toggle', '.category-toggle');
     }
 
     selectChangeColor($element, $param){
@@ -21,28 +24,9 @@ class Category {
             // $param.attr('style="color:'+ $color +'; background-color:'+ $color +'"')
         });
     }
-
-    toggleTable($element, param){
-        $element.on("click",function(){
-            let obj = $(this);
-            
-            if( obj.hasClass("glyphicon-plus") ){
-              obj.hide();
-              obj.next().show();            
-              obj.parent().parent().nextAll(param).show("slow");
-            }else{
-               obj.hide();
-               obj.prev().show();
-               obj.parent().parent().nextAll(param).hide();
-            }
-        });
-    }
 }
 
 const category = new Category();
 category.selectChangeColor($('.text_color'), $('.text-color'));
 category.selectChangeBackground($('.background_color'), $('.background'));
 category.selectChangeIcon($('.icon'));
-
-category.toggleTable($('.toggle-tr-category'), '.sub-i-toggle');
-category.toggleTable($('.toggle-tr-sub'), '.sub-ii-toggle');

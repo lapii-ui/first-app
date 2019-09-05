@@ -1,0 +1,8 @@
+.switchToggle input[type=checkbox]{height: 0; width: 0; visibility: hidden; position: absolute; }
+.switchToggle label {cursor: pointer; text-indent: -9999px; width: 65px; max-width: 65px; height: 20px; background: #d1d1d1; display: block; border-radius: 100px; position: relative; }
+.switchToggle label:after {content: ''; position: absolute; top: 1px; left: 1px; width: 18px; height: 18px; background: #fff; border-radius: 90px; transition: 0.3s; }
+.switchToggle input:checked + label, .switchToggle input:checked + input + label  {background: #0e9f68; }
+.switchToggle input + label:before, .switchToggle input + input + label:before {content: 'Uom'; position: absolute; top: 0; left: 25px; width: 18px; height: 18px; border-radius: 90px; transition: 0.3s; text-indent: 0; }
+.switchToggle input:checked + label:before, .switchToggle input:checked + input + label:before {content: 'Group'; position: absolute; top: 0; left: 7px; width: 18px; height: 18px; border-radius: 90px; transition: 0.3s; text-indent: 0; color: #fff; }
+.switchToggle input:checked + label:after, .switchToggle input:checked + input + label:after {left: calc(100% - 1px); transform: translateX(-100%); }
+.switchToggle label:active:after {width: 63px; }
