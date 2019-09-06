@@ -43,6 +43,7 @@
                   <li><a href="{{ url('get-grouptables') }}">Tables</a></li>
                   <li><a href="{{ url('get-exchange') }}">Exchange Rate</a></li>
                   <li><a href="{{ url('category') }}">Categories</a></li>
+                  <li><a href="{{ url('uom') }}">Unit of Measure</a></li>
                   <li><a href="{{ url('company') }}">Company</a></li>
               </ul>
             </li>
