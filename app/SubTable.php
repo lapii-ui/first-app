@@ -1,17 +1,14 @@
 <?php
 
 namespace App;
-
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Table extends Model
+class SubTable extends Model
 {
     use Notifiable;
-
-    protected $table = 'group_tables';
-
+    protected $table = 'tables';
     protected $fillable = [
-        'name', 'type', 'remark',
+        'id', 'group_id', 'name', 'status', 'remark',
     ];
 }

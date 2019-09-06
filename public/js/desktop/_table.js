@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/desktop/_category.js":
-/*!*******************************************!*\
-  !*** ./resources/js/desktop/_category.js ***!
-  \*******************************************/
+/***/ "./resources/js/desktop/_table.js":
+/*!****************************************!*\
+  !*** ./resources/js/desktop/_table.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -99,37 +99,14 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Category =
+var Table =
 /*#__PURE__*/
 function () {
-  function Category() {
-    _classCallCheck(this, Category);
+  function Table() {
+    _classCallCheck(this, Table);
   }
 
-  _createClass(Category, [{
-    key: "selectChangeColor",
-    value: function selectChangeColor($element, $param) {
-      $element.on('input', function () {
-        $color = $element.val();
-        $param.css('color', $color);
-      });
-    }
-  }, {
-    key: "selectChangeBackground",
-    value: function selectChangeBackground($element, $param) {
-      $element.on('input', function () {
-        $color = $element.val();
-        $param.css('background-color', $color);
-      });
-    }
-  }, {
-    key: "selectChangeIcon",
-    value: function selectChangeIcon($element, $param) {
-      $element.on('input', function () {
-        $color = $element.val(); // $param.attr('style="color:'+ $color +'; background-color:'+ $color +'"')
-      });
-    }
-  }, {
+  _createClass(Table, [{
     key: "toggleTable",
     value: function toggleTable($element) {
       $element.on("click", function () {
@@ -148,25 +125,22 @@ function () {
     }
   }]);
 
-  return Category;
+  return Table;
 }();
 
-var category = new Category();
-category.selectChangeColor($('.text_color'), $('.text-color'));
-category.selectChangeBackground($('.background_color'), $('.background'));
-category.selectChangeIcon($('.icon'));
-category.toggleTable($('.toggle-tr'));
+var table = new Table();
+table.toggleTable($('.toggle-tr'));
 
 /***/ }),
 
-/***/ 1:
-/*!*************************************************!*\
-  !*** multi ./resources/js/desktop/_category.js ***!
-  \*************************************************/
+/***/ 2:
+/*!**********************************************!*\
+  !*** multi ./resources/js/desktop/_table.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\xampp\htdocs\first-app\resources\js\desktop\_category.js */"./resources/js/desktop/_category.js");
+module.exports = __webpack_require__(/*! F:\xampp\htdocs\first-app\resources\js\desktop\_table.js */"./resources/js/desktop/_table.js");
 
 
 /***/ })

@@ -59,12 +59,21 @@ Route::post('add-branch', 'CompanyController@add_branch');
 Route::get('edit-branch/{id}', 'CompanyController@edit_branch');
 Route::post('update-branch/{id}', 'CompanyController@update_branch');
 Route::get('delete-branch/{id}', 'CompanyController@delete_branch');
-Route::get('get-grouptable', 'TableController@get_grouptable');
-Route::get('create-grouptable', 'TableController@create_grouptable');
-Route::post('add-grouptable', 'TableController@add_grouptable');
-Route::get('edit-grouptable/{id}', 'TableController@edit_grouptable');
-Route::post('update-grouptable/{id}', 'TableController@update_grouptable');
 
-Route::get('create-subtable/{id}', 'TableController@create_subtable');
+Route::get('get-grouptables', 'GroupTableController@get_grouptables');
+Route::get('create-grouptable', 'GroupTableController@create_grouptable');
+Route::post('store-grouptable','GroupTableController@store_grouptable');
+Route::get('edit-grouptable/{id}', 'GroupTableController@edit_grouptable');
+Route::post('update-grouptable/{id}','GroupTableController@update_grouptable');
+Route::get('delete-grouptable/{id}', 'GroupTableController@delete_grouptable');
+Route::get('create-subtable', 'GroupTableController@create_subtable');
+Route::post('store-subtable','GroupTableController@store_subtable');
+Route::get('edit-subtable/{id}','GroupTableController@edit_subtable');
+Route::post('update-subtable/{id}','GroupTableController@update_subtable');
+Route::get('delete-subtable/{id}', 'GroupTableController@delete_subtable');
+
+Route::get('get-exchange', 'ExchangeRateController@get_exchange');
+Route::get('create-exchange', 'ExchangeRateController@create_exchange');
+Route::post('store-exchange','ExchangeRateController@store_exchange');
 
 Route::resource('/front', 'FrontEndController');

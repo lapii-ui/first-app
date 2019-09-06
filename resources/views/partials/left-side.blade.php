@@ -40,7 +40,8 @@
                       </li>
                     </ul>
                   </li>
-                  <li><a href="#level1_1">Tables</a></li>
+                  <li><a href="{{ url('get-grouptables') }}">Tables</a></li>
+                  <li><a href="{{ url('get-exchange') }}">Exchange Rate</a></li>
                   <li><a href="{{ url('category') }}">Categories</a></li>
                   <li><a href="{{ url('company') }}">Company</a></li>
               </ul>
@@ -61,7 +62,7 @@
             </li>
             <li><a class="txt-upper"><i class="fas fa-tags fa-icon"></i> @lang('transactions') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
-                <li><a href="{{ url('get-grouptable') }}">Tables</a></li>
+                <li><a href="#">Tables</a></li>
                 <li><a href="tables_dynamic.html">Table Dynamic</a></li>
               </ul>
             </li>
