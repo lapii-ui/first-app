@@ -17,10 +17,10 @@
             </thead>
             <tbody>
             @foreach($company as $index => $com)
-                <tr>
+                <tr class="company-toggle">
                     <td class="text-center align-middle">
-                        <span class="glyphicon glyphicon-plus toggle-tr"></span>
-                        <span class="glyphicon glyphicon-minus toggle-tr" style="display:none"></span>
+                        <span class="glyphicon glyphicon-plus toggle-tr-company"></span>
+                        <span class="glyphicon glyphicon-minus toggle-tr-company" style="display:none"></span>
                         {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                     </td>
                     <td class="text-center align-middle">{{ $com->name }}</td>
@@ -36,10 +36,8 @@
                 </tr>
 
                 @foreach ($com->branches as $index => $branch)
-                    <tr style="background-color:#ccc;">
+                    <tr class="branch-toggle" style="display:none; background-color:#ccc;">
                         <td class="text-right align-middle">
-                            <span class="glyphicon glyphicon-plus toggle-tr"></span>
-                            <span class="glyphicon glyphicon-minus toggle-tr" style="display:none"></span>
                             {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                         </td>
                         <td class="text-center align-middle">{{ $branch->name }}</td>
@@ -56,3 +54,7 @@
         </table>
     </div>
 @stop
+
+@section('js')
+    <script src="{{ asset('js/desktop/_category.js') }}"></script>
+@endsection

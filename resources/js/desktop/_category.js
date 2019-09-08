@@ -4,6 +4,7 @@ class Category {
     constructor() {
         common.toggleTable($('.toggle-tr-category'), '.category-toggle', '.sub-ii-toggle');
         common.toggleTable($('.toggle-tr-sub'), '.sub-i-toggle', '.category-toggle');
+        common.toggleTable($('.toggle-tr-company'), '.company-toggle');
     }
 
     selectChangeColor($element, $param){

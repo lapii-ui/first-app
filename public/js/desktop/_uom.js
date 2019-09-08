@@ -175,6 +175,23 @@ function () {
         }
       });
     }
+  }, {
+    key: "defineUOM",
+    value: function defineUOM($element) {
+      $element.on('click', function () {
+        var _this = $(this).closest('tr');
+
+        var alt_qty = _this.find('input.alt-qty-value').val();
+
+        var alt_uom = _this.find('.alt-uom-select').val().trim();
+
+        var base_qty = _this.find('input.base-qty-value').val();
+
+        var base_uom = _this.find('.base-uom-select').val().trim();
+
+        $('.table-uom-list').append('<tr><td>' + alt_qty + '</td>' + '<td>' + alt_uom + '</td>' + '<td>Equal</td>' + '<td>' + base_qty + '</td>' + '<td>' + base_uom + '</td>' + '<td><a href="#" class="text-danger"><i class="fas fa-trash"></i></a></td></tr>'); // console.log(alt_uom);
+      });
+    }
   }]);
 
   return UOM;
@@ -182,6 +199,7 @@ function () {
 
 var uom = new UOM();
 uom.toggleSwitch($('#switch'));
+uom.defineUOM($('#btn-define-uom'));
 
 /***/ }),
 

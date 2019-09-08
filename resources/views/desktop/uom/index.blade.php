@@ -13,7 +13,7 @@
                     <th class="text-center">#</th>
                     <th class="text-center">Code</th>
                     <th class="text-center">Name</th>
-                    <th class="text-center"></th>
+                    <th class="text-center W75PX"></th>
                 </tr>
             </thead>
             <tbody class="tb-uom">
@@ -22,7 +22,7 @@
                     <td class="text-center align-middle">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</td>
                     <td class="text-center align-middle">{{ $uom->code }}</td>
                     <td class="text-center align-middle">{{ $uom->name }}</td>
-                    <td class="text-right align-middle">
+                    <td class="text-center align-middle">
                         <a href="{{ url('edit-uom/'.$uom->id) }}"><i class="far fa-edit"></i></a> |
                         <a href="{{ url('delete-uom/'.$uom->id) }}" class="text-danger"><i class="fas fa-trash"></i></a>
                     </td>
@@ -35,8 +35,8 @@
                     <td class="text-center align-middle">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</td>
                     <td class="text-center align-middle">{{ $guom->code }}</td>
                     <td class="text-center align-middle">{{ $guom->name }}</td>
-                    <td class="text-right align-middle">
-                        <a href="{{ url('define-uom/'.$guom->id) }}">Define</a>
+                    <td class="text-center align-middle">
+                        <a href="#" data-toggle="modal" data-target="#defineGroupUOM"><i class="fas fa-sliders-h"></i></a>
                     </td>
                 </tr>
                 @endforeach
@@ -46,5 +46,6 @@
 @stop
 
 @section('js')
+    @include('desktop.uom.define-uom.modal-define')
     <script src="{{ asset('js/desktop/_uom.js') }}"></script>
 @stop

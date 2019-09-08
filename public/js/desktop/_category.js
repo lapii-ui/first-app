@@ -112,6 +112,7 @@ function () {
 
     _common__WEBPACK_IMPORTED_MODULE_0__["default"].toggleTable($('.toggle-tr-category'), '.category-toggle', '.sub-ii-toggle');
     _common__WEBPACK_IMPORTED_MODULE_0__["default"].toggleTable($('.toggle-tr-sub'), '.sub-i-toggle', '.category-toggle');
+    _common__WEBPACK_IMPORTED_MODULE_0__["default"].toggleTable($('.toggle-tr-company'), '.company-toggle');
   }
 
   _createClass(Category, [{
