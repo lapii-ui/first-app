@@ -8,9 +8,9 @@
                 <tr>
                     <th class="text-center">#</th>
                     <th class="text-center">Date</th>
-                    <th class="text-center">currency</th>
-                    <th class="text-center">amount</th>
-                    <th class="text-center">rate</th>
+                    <th class="text-center">Currency</th>
+                    <th class="text-center">Amount</th>
+                    <th class="text-center">Rate</th>
                     <th class="text-center">Default</th>
                     <th class="text-center"></th>
                 </tr>
@@ -19,12 +19,12 @@
                 @foreach($exchange as $index => $exch)
                 <tr>
                     <td class="text-center align-middle">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</td>
-                    <td class="text-center align-middle"></td>
-                    <td class="text-center align-middle"></td>
-                    <td class="text-center align-middle"></td>
-                    <td class="text-center align-middle"></td>
+                    <td class="text-center align-middle">{{ $exch ->date_set }}</td>
+                    <td class="text-center align-middle">{{ $exch->currencies->name }}</td>
+                    <td class="text-center align-middle">{{ $exch ->amount }}</td>
+                    <td class="text-center align-middle">{{ $exch ->rate }}</td>
                     <td class="text-center align-middle">
-                        <a href="#"><i class="far fa-edit"></i></a> |
+                    <a href=" {{ url('edit-exchange/'.$exch->id) }}"><i class="far fa-edit"></i></a> |
                         <a href="#" class="text-danger"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>

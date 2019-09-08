@@ -75,6 +75,7 @@ Route::get('delete-subtable/{id}', 'GroupTableController@delete_subtable');
 Route::get('get-exchange', 'ExchangeRateController@get_exchange');
 Route::get('create-exchange', 'ExchangeRateController@create_exchange');
 Route::post('store-exchange','ExchangeRateController@store_exchange');
+Route::get('edit-exchange/{id}','ExchangeRateController@edit_exchange');
 
 Route::resource('uom', 'UOMController');
 

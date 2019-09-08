@@ -29,7 +29,7 @@ class GroupTableController extends Controller
     public function store_grouptable(GroupTableValidationRequest $request)
     {
         $params = $request->all();
-        $params['status'] = $request->status == 'on' ? '1' : '0';
+        $params['is_delete'] = $request->is_delete == 'on' ? '1' : '0';
         $group_table = GroupTable::create($params);
         toastr()->success('Create group table successfully!', 'Group table form', ['timeOut' => 1500]);
         return redirect('get-grouptables');
@@ -45,7 +45,7 @@ class GroupTableController extends Controller
     {
         $group_table = GroupTable::where('id', '=', $id)->first();
         $params = $request->all();
-        $params['status'] = $request->status == 'on' ? '1' : '0';
+        $params['is_delete'] = $request->is_delete == 'on' ? '1' : '0';
         $group_table->update($params);
         toastr()->success('Update group table successfully!', 'group table form', ['timeOut' => 1500]);
         return redirect('get-grouptables');
@@ -68,6 +68,7 @@ class GroupTableController extends Controller
     public function store_subtable(SubTableValidationRequest  $request)
     {
         $params = $request->all();
+        $params['status'] = 'F';
         $sub_table = SubTable::create($params);
         toastr()->success('Create group table successfully!', 'Group table form', ['timeOut' => 1500]);
         return redirect('get-grouptables');

@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -10,8 +9,7 @@
                 <label for="date" class="col-md-4 col-form-label text-md-right">{{ __('Date') }}</label>
                 <div class="col-md-6">
                 <input name="date_set" id="date" 
-                    class="form-control pull-right @error('code') is-invalid @enderror" 
-                    onchange="invoicedue(event);" type="date" autofocus>
+                    class="form-control pull-right @error('code') is-invalid @enderror" type="date" autofocus>
                 </div>
             </div>
             <div class="form-group row">
@@ -27,21 +25,18 @@
             </div>
             <div class="form-group row">
                 <label for="amount" class="col-md-4 col-form-label text-md-right">{{ __('Amount') }}</label>
-
                 <div class="col-md-6">
-                    <input id="amount" value="1" type="text" class="form-control @error('amount') is-invalid @enderror" name="amount" autofocus>
+                    <input id="amount" value="1" type="text" class="form-control @error('amount') is-invalid @enderror" name="amount">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="rate" class="col-md-4 col-form-label text-md-right">{{ __('Rate') }}</label>
-
                 <div class="col-md-6">
-                    <input id="rate" type="text" class="form-control @error('rate') is-invalid @enderror" name="rate" autofocus>
+                    <input id="rate" type="text" class="form-control @error('rate') is-invalid @enderror" name="rate">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="default" class="col-md-4 col-form-label text-md-right">{{ __('Default') }}</label>
-
                 <div class="col-md-6">
                     <input id="default" type="checkbox" class="@error('default') is-invalid @enderror" name="default">
                 </div>

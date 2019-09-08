@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notifiable;
 class Currency extends Model
 {
     use Notifiable;
-
+    protected $table = 'currencies';
     protected $fillable = [
         'id', 'name',
     ];

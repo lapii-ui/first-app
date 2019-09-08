@@ -9,7 +9,7 @@ class GroupTable extends Model
     use Notifiable;
     protected $table = 'group_tables';
     protected $fillable = [
-        'id', 'name', 'type', 'remark', 'status',
+        'id', 'name', 'type', 'remark', 'is_delete',
     ];
     public function sub_table() {
         return $this->hasMany(SubTable::class, 'group_id', 'id');

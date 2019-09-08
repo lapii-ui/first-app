@@ -58,8 +58,7 @@
                     <tr style="background-color:#ccc; display:none;" class="sub-ii-toggle">
                         <td class="text-right align-middle">
                             {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
-                        </td>=> $sub2)
-                    <tr style="backgroun
+                        </td>
                         <td class="text-center align-middle">{{ $sub2->name }}</td>
                         <td class="text-center align-middle">{{ $sub2->icon }}</td>
                         <td class="text-center align-middle">{{ $sub2->text_color }}</td>

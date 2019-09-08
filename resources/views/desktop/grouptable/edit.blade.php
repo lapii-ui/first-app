@@ -28,10 +28,10 @@
             </div>
 
             <div class="form-group row">
-                <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('Status') }}</label>
+                <label for="is_delete" class="col-md-4 col-form-label text-md-right">{{ __('Status') }}</label>
 
                 <div class="col-md-6">
-                    <input id="status" type="checkbox" class="@error('status') is-invalid @enderror" name="status" {{ $group_table->status == 1 ? 'checked' : '' }}>
+                    <input id="is_delete" type="checkbox" class="@error('is_delete') is-invalid @enderror" name="is_delete" {{ $group_table->status == 1 ? 'checked' : '' }}>
                 </div>
             </div>
 

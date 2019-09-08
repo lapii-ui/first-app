@@ -24,8 +24,8 @@ class ExchangeRateValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'date'                         => 'required',
-            'rate'                        => 'required'
+            'date'                         => 'date',
+            'rate'                        => 'required',
         ];
     }
     public function messages()

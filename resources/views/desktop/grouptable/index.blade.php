@@ -10,7 +10,6 @@
                     <th class="text-center">Name</th>
                     <th class="text-center">Type</th>
                     <th class="text-center">Remark</th>
-                    <th class="text-center">Status</th>
                     <th class="text-center"></th>
                 </tr>
             </thead>
@@ -26,8 +25,6 @@
                     <td class="text-center align-middle">{{ $grouptable->type }}</td>
                     <td class="text-center align-middle">{{ $grouptable->remark }}</td>
                     <td class="text-center align-middle">
-                        {{ $grouptable->status == 1 ? 'Active' : 'Inactive' }}</td>
-                    <td class="text-center align-middle">
                         <a href="{{ url('create-subtable?id='.$grouptable->id) }}"><i class="far fa-plus-square"></i></a> |  
                         <a href="{{ url('edit-grouptable/'.$grouptable->id) }}"><i class="far fa-edit"></i></a> |
                         <a href="{{ url('delete-grouptable/'.$grouptable->id) }}" class="text-danger"><i class="fas fa-trash"></i></a>
@@ -42,7 +39,7 @@
                             {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                         </td>
                         <td class="text-center align-middle">{{ $subtable->name }}</td>
-                        <td class="text-center align-middle">{{ $subtable->status }}</td>
+                        <td class="text-center align-middle">{{ $subtable->status == 'F' ? 'Free' : 'Not default' }}</td>
                         <td class="text-center align-middle">{{ $subtable->remark }}</td>
                         <td class="text-center align-middle">
                             <a href="{{ url('edit-subtable/'.$subtable->id.'?id='.$grouptable->id) }}"><i class="far fa-edit"></i></a> |
