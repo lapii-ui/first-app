@@ -26,7 +26,7 @@
                       <input type="number" class="alt-qty-value W75PX">
                   </td>
                   <td class="text-center">
-                      <select name="" id="alt-uom-select" class="alt-uom-select select-option">
+                      <select id="alt-uom-select" class="alt-uom-select select-option">
                           <option value="1">UNIT</option>
                           <option value="2">CASE</option>
                       </select>
@@ -38,7 +38,7 @@
                     <input type="number" class="base-qty-value W75PX">
                   </td>
                   <td class="text-center">
-                    <select name="" id="base-uom-select" class="base-uom-select select-option">
+                    <select id="base-uom-select" class="base-uom-select select-option">
                         <option value="1">UNIT</option>
                         <option value="2">CASE</option>
                     </select>
@@ -52,12 +52,15 @@
         </div>
 
         <div class="uom-list">
-          <table class="table-uom-list" style="width: 100%;"></table>
+          <form id="frm-data-uom">
+            @csrf
+            <table class="table-uom-list" style="width: 100%;"></table>
+          </form>
         </div>
       </div>
       <div class="modal-footer">
         {{--  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  --}}
-        <button type="button" class="btn-define-group-uom">Submit</button>
+        <button type="button" id="btn-define-group-uom">Submit</button>
       </div>
     </div>
   </div>

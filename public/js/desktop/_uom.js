@@ -177,7 +177,8 @@ function () {
     }
   }, {
     key: "defineUOM",
-    value: function defineUOM($element) {
+    value: function defineUOM($element, $next) {
+      var count = 0;
       $element.on('click', function () {
         var _this = $(this).closest('tr');
 
@@ -189,7 +190,28 @@ function () {
 
         var base_uom = _this.find('.base-uom-select').val().trim();
 
-        $('.table-uom-list').append('<tr><td>' + alt_qty + '</td>' + '<td>' + alt_uom + '</td>' + '<td>Equal</td>' + '<td>' + base_qty + '</td>' + '<td>' + base_uom + '</td>' + '<td><a href="#" class="text-danger"><i class="fas fa-trash"></i></a></td></tr>'); // console.log(alt_uom);
+        var index = count++;
+        $('.table-uom-list').append('<tr><td><input name="uom[' + index + '][alt_qty]" class="W75PX" value="' + alt_qty + '"></td>' + '<td><input name="uom[' + index + '][alt_uom]" class="W75PX" value="' + alt_uom + '"></td>' + '<td>Equal</td>' + '<td><input name="uom[' + index + '][base_qty]" class="W75PX" value="' + base_qty + '"></td>' + '<td><input name="uom[' + index + '][base_uom]" class="W75PX" value="' + base_uom + '"></td>' + '<td><a href="#" class="text-danger"><i class="fas fa-trash"></i></a></td></tr>');
+      });
+      $next.on('click', function () {
+        var frmData = $('#frm-data-uom').serialize();
+        $.ajax({
+          method: 'post',
+          url: 'add-define-uom',
+          data: frmData,
+          success: function success(data) {
+            if (data.success == true) {
+              toastr.success(data.message, 'UOM Form', {
+                "timeOut": "1500",
+                onHidden: function onHidden() {
+                  location.reload();
+                }
+              });
+            } else if (message.success == false) {
+              toastr.error('Whoops! Something wrong happended');
+            }
+          }
+        });
       });
     }
   }]);
@@ -199,7 +221,7 @@ function () {
 
 var uom = new UOM();
 uom.toggleSwitch($('#switch'));
-uom.defineUOM($('#btn-define-uom'));
+uom.defineUOM($('#btn-define-uom'), $('#btn-define-group-uom'));
 
 /***/ }),
 

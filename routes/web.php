@@ -69,5 +69,6 @@ Route::post('update-grouptable/{id}', 'TableController@update_grouptable');
 Route::get('create-subtable/{id}', 'TableController@create_subtable');
 
 Route::resource('uom', 'UOMController');
+Route::post('add-define-uom', 'UOMController@add_define_uom');
 
 Route::resource('/front', 'FrontEndController');
