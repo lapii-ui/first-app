@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -225,14 +225,14 @@ uom.defineUOM($('#btn-define-uom'), $('#btn-define-group-uom'));
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!********************************************!*\
   !*** multi ./resources/js/desktop/_uom.js ***!
   \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\first-app\resources\js\desktop\_uom.js */"./resources/js/desktop/_uom.js");
+module.exports = __webpack_require__(/*! F:\xampp\htdocs\first-app\resources\js\desktop\_uom.js */"./resources/js/desktop/_uom.js");
 
 
 /***/ })
