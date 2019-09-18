@@ -43,10 +43,8 @@ class WarehouseController extends Controller
     }
     public function delete_warehouse($id){
         $warehouse = Warehouse::where('id', '=', $id)->first();
-
         $warehouse->delete();
         toastr()->success('Deleted warehouse successfully!', 'Warehouse Form', ['timeOut' => 1500]);
-
         return redirect('get-warehouse');
     }
 }

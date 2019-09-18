@@ -206,7 +206,7 @@ var common = new Common();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\first-app\resources\js\desktop\_category.js */"./resources/js/desktop/_category.js");
+module.exports = __webpack_require__(/*! F:\xampp\htdocs\first-app\resources\js\desktop\_category.js */"./resources/js/desktop/_category.js");
 
 
 /***/ })
