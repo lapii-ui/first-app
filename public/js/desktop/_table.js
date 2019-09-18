@@ -81,30 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/desktop/_uom.js":
-/*!**************************************!*\
-  !*** ./resources/js/desktop/_uom.js ***!
-  \**************************************/
+/***/ "./resources/js/desktop/_table.js":
+/*!****************************************!*\
+  !*** ./resources/js/desktop/_table.js ***!
+  \****************************************/
 /*! no exports provided */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'F:\\xampp\\htdocs\\first-app\\resources\\js\\desktop\\_uom.js'");
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'F:\\xampp\\htdocs\\first-app\\resources\\js\\desktop\\_table.js'");
 
 /***/ }),
 
-/***/ 3:
-/*!********************************************!*\
-  !*** multi ./resources/js/desktop/_uom.js ***!
-  \********************************************/
+/***/ 2:
+/*!**********************************************!*\
+  !*** multi ./resources/js/desktop/_table.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\xampp\htdocs\first-app\resources\js\desktop\_uom.js */"./resources/js/desktop/_uom.js");
+module.exports = __webpack_require__(/*! F:\xampp\htdocs\first-app\resources\js\desktop\_table.js */"./resources/js/desktop/_table.js");
 
 
 /***/ })

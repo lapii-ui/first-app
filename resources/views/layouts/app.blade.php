@@ -14,6 +14,11 @@
     <!-- Custom Theme Style -->
     <link href="/css/custom.min.css" rel="stylesheet">
     <link href="/css/common.css" rel="stylesheet">
+<<<<<<< HEAD
+=======
+    <link href="/css/uom.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bayon' rel='stylesheet' type='text/css'>
+>>>>>>> updated
   </head>
 
   <body class="nav-md">
