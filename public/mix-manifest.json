@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/desktop/_category.js": "/js/desktop/_category.js",
+    "/js/desktop/_dashboard.js": "/js/desktop/_dashboard.js",
     "/js/desktop/_uom.js": "/js/desktop/_uom.js"
 }
