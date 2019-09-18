@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\DefineUOMValidationRequest;
 use App\{
     UOM,
-    GroupUOM
+    GroupUOM,
+    DefineUOM
 };
 
 class UOMController extends Controller
@@ -46,5 +48,19 @@ class UOMController extends Controller
     public function delete_uom($id)
     {
         //
+    }
+
+    public function add_define_uom(Request $request){
+        foreach ( $request->uom as $uom) {
+            DefineUOM::create([
+                'alt_qty'       => $uom['alt_qty'],
+                'uom_id'        => $uom['alt_uom'],
+                'operator'      => 'Equal',
+                'base_qty'      => $uom['base_qty'],
+                'group_uom_id'  => $uom['base_uom'],
+                'is_delete'     => 0,
+            ]);
+        }
+        return response()->json(['success' => true, 'message' => 'Define UOM successfully!']);
     }
 }

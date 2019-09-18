@@ -86,14 +86,142 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./resources/js/desktop/_common.js":
+/*!*****************************************!*\
+  !*** ./resources/js/desktop/_common.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Common =
+/*#__PURE__*/
+function () {
+  function Common() {
+    _classCallCheck(this, Common);
+  }
+
+  _createClass(Common, [{
+    key: "toggleTable",
+    value: function toggleTable($element, param1, param2) {
+      $element.on("click", function () {
+        var obj = $(this);
+
+        if (obj.hasClass("glyphicon-plus")) {
+          obj.hide();
+          obj.next().show();
+          obj.parents(param1).nextUntil(param1).not(param2).show('slow');
+        } else {
+          obj.hide();
+          obj.prev().show();
+          obj.parents(param1).nextUntil(param1).not(param2).hide();
+        }
+      });
+    }
+  }]);
+
+  return Common;
+}();
+
+var common = new Common();
+/* harmony default export */ __webpack_exports__["default"] = (common);
+
+/***/ }),
+
 /***/ "./resources/js/desktop/_uom.js":
 /*!**************************************!*\
   !*** ./resources/js/desktop/_uom.js ***!
   \**************************************/
 /*! no exports provided */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'F:\\xampp\\htdocs\\first-app\\resources\\js\\desktop\\_uom.js'");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_common */ "./resources/js/desktop/_common.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var UOM =
+/*#__PURE__*/
+function () {
+  function UOM() {
+    _classCallCheck(this, UOM);
+  }
+
+  _createClass(UOM, [{
+    key: "toggleSwitch",
+    value: function toggleSwitch($element) {
+      $element.on('change', function () {
+        var _switch = $(this).is(':checked');
+
+        if (_switch == true) {
+          $('.tb-uom').hide();
+          $('.tb-group-uom').show('slow');
+        } else {
+          $('.tb-group-uom').hide();
+          $('.tb-uom').show('slow');
+        }
+      });
+    }
+  }, {
+    key: "defineUOM",
+    value: function defineUOM($element, $next) {
+      var count = 0;
+      $element.on('click', function () {
+        var _this = $(this).closest('tr');
+
+        var alt_qty = _this.find('input.alt-qty-value').val();
+
+        var alt_uom = _this.find('.alt-uom-select').val().trim();
+
+        var base_qty = _this.find('input.base-qty-value').val();
+
+        var base_uom = _this.find('.base-uom-select').val().trim();
+
+        var index = count++;
+        $('.table-uom-list').append('<tr><td><input name="uom[' + index + '][alt_qty]" class="W75PX" value="' + alt_qty + '"></td>' + '<td><input name="uom[' + index + '][alt_uom]" class="W75PX" value="' + alt_uom + '"></td>' + '<td>Equal</td>' + '<td><input name="uom[' + index + '][base_qty]" class="W75PX" value="' + base_qty + '"></td>' + '<td><input name="uom[' + index + '][base_uom]" class="W75PX" value="' + base_uom + '"></td>' + '<td><a href="#" class="text-danger"><i class="fas fa-trash"></i></a></td></tr>');
+      });
+      $next.on('click', function () {
+        var frmData = $('#frm-data-uom').serialize();
+        $.ajax({
+          method: 'post',
+          url: 'add-define-uom',
+          data: frmData,
+          success: function success(data) {
+            if (data.success == true) {
+              toastr.success(data.message, 'UOM Form', {
+                "timeOut": "1500",
+                onHidden: function onHidden() {
+                  location.reload();
+                }
+              });
+            } else if (message.success == false) {
+              toastr.error('Whoops! Something wrong happended');
+            }
+          }
+        });
+      });
+    }
+  }]);
+
+  return UOM;
+}();
+
+var uom = new UOM();
+uom.toggleSwitch($('#switch'));
+uom.defineUOM($('#btn-define-uom'), $('#btn-define-group-uom'));
 
 /***/ }),
 

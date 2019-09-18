@@ -17,3 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
 mix.js( 'resources/js/desktop/_category.js', 'public/js/desktop/_category.js').options({ processCssUrls: false });
 mix.js( 'resources/js/desktop/_table.js', 'public/js/desktop/_table.js').options({ processCssUrls: false });
 mix.js( 'resources/js/desktop/_uom.js', 'public/js/desktop/_uom.js').options({ processCssUrls: false });
+
+

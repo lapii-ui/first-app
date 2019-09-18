@@ -54,7 +54,6 @@ Route::resource('company', 'CompanyController');
 Route::post('update-company/{id}', 'CompanyController@update_company');
 Route::get('delete-company/{id}', 'CompanyController@delete_company');
 
-Route::resource('uom', 'UOMController');
 Route::get('create-subtable/{id}', 'TableController@create_subtable');
 
 Route::get('create-branch', 'CompanyController@create_branch');
@@ -62,6 +61,9 @@ Route::post('add-branch', 'CompanyController@add_branch');
 Route::get('edit-branch/{id}', 'CompanyController@edit_branch');
 Route::post('update-branch/{id}', 'CompanyController@update_branch');
 Route::get('delete-branch/{id}', 'CompanyController@delete_branch');
+
+Route::resource('uom', 'UOMController');
+Route::post('add-define-uom', 'UOMController@add_define_uom');
 
 Route::get('get-grouptables', 'GroupTableController@get_grouptables');
 Route::get('create-grouptable', 'GroupTableController@create_grouptable');
