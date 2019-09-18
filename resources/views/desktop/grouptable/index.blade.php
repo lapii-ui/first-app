@@ -15,7 +15,7 @@
             </thead>
             <tbody>
             @foreach($group_table as $index => $grouptable)
-                <tr>
+                <tr class="toggle-group">
                     <td class="text-center align-middle">
                         <span class="glyphicon glyphicon-plus toggle-tr"></span>
                         <span class="glyphicon glyphicon-minus toggle-tr" style="display:none"></span>
@@ -32,10 +32,8 @@
                 </tr>
 
                 @foreach ($grouptable->sub_table as $index => $subtable)
-                    <tr style="background-color:#ccc;">
+                    <tr style="background-color:#ccc; display:none;">
                         <td class="text-right align-middle">
-                            <span class="glyphicon glyphicon-plus toggle-tr"></span>
-                            <span class="glyphicon glyphicon-minus toggle-tr" style="display:none"></span>
                             {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                         </td>
                         <td class="text-center align-middle">{{ $subtable->name }}</td>
