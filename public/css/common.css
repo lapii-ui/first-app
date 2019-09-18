@@ -59,6 +59,9 @@ span.fa-arrow-right-import{
     min-width: unset !important;
     width: 120px !important;
 }
+.W75PX{
+    width: 75px;
+}
 .remove-width{
     max-width: unset;
     width: 100%;
@@ -68,4 +71,18 @@ span.fa-arrow-right-import{
 }
 .remove-pdd{
     padding: unset;
+}
+
+.modal-content{
+    border-radius: unset;
+}
+.modal-header, .modal-footer, .modal-body{
+    padding: 8px;
+}
+.modal-title{
+    display: contents;
+}
+button{
+    margin-right: unset;
+    margin-bottom: unset; 
 }

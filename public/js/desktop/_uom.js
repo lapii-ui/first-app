@@ -81,74 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./resources/js/desktop/_category.js":
-/*!*******************************************!*\
-  !*** ./resources/js/desktop/_category.js ***!
-  \*******************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_common */ "./resources/js/desktop/_common.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var Category =
-/*#__PURE__*/
-function () {
-  function Category() {
-    _classCallCheck(this, Category);
-
-    _common__WEBPACK_IMPORTED_MODULE_0__["default"].toggleTable($('.toggle-tr-category'), '.category-toggle', '.sub-ii-toggle');
-    _common__WEBPACK_IMPORTED_MODULE_0__["default"].toggleTable($('.toggle-tr-sub'), '.sub-i-toggle', '.category-toggle');
-    _common__WEBPACK_IMPORTED_MODULE_0__["default"].toggleTable($('.toggle-tr-company'), '.company-toggle');
-  }
-
-  _createClass(Category, [{
-    key: "selectChangeColor",
-    value: function selectChangeColor($element, $param) {
-      $element.on('input', function () {
-        $color = $element.val();
-        $param.css('color', $color);
-      });
-    }
-  }, {
-    key: "selectChangeBackground",
-    value: function selectChangeBackground($element, $param) {
-      $element.on('input', function () {
-        $color = $element.val();
-        $param.css('background-color', $color);
-      });
-    }
-  }, {
-    key: "selectChangeIcon",
-    value: function selectChangeIcon($element, $param) {
-      $element.on('input', function () {
-        $color = $element.val(); // $param.attr('style="color:'+ $color +'; background-color:'+ $color +'"')
-      });
-    }
-  }]);
-
-  return Category;
-}();
-
-var category = new Category();
-category.selectChangeColor($('.text_color'), $('.text-color'));
-category.selectChangeBackground($('.background_color'), $('.background'));
-category.selectChangeIcon($('.icon'));
-
-/***/ }),
 
 /***/ "./resources/js/desktop/_common.js":
 /*!*****************************************!*\
@@ -199,14 +135,104 @@ var common = new Common();
 
 /***/ }),
 
-/***/ 1:
-/*!*************************************************!*\
-  !*** multi ./resources/js/desktop/_category.js ***!
-  \*************************************************/
+/***/ "./resources/js/desktop/_uom.js":
+/*!**************************************!*\
+  !*** ./resources/js/desktop/_uom.js ***!
+  \**************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_common */ "./resources/js/desktop/_common.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var UOM =
+/*#__PURE__*/
+function () {
+  function UOM() {
+    _classCallCheck(this, UOM);
+  }
+
+  _createClass(UOM, [{
+    key: "toggleSwitch",
+    value: function toggleSwitch($element) {
+      $element.on('change', function () {
+        var _switch = $(this).is(':checked');
+
+        if (_switch == true) {
+          $('.tb-uom').hide();
+          $('.tb-group-uom').show('slow');
+        } else {
+          $('.tb-group-uom').hide();
+          $('.tb-uom').show('slow');
+        }
+      });
+    }
+  }, {
+    key: "defineUOM",
+    value: function defineUOM($element, $next) {
+      var count = 0;
+      $element.on('click', function () {
+        var _this = $(this).closest('tr');
+
+        var alt_qty = _this.find('input.alt-qty-value').val();
+
+        var alt_uom = _this.find('.alt-uom-select').val().trim();
+
+        var base_qty = _this.find('input.base-qty-value').val();
+
+        var base_uom = _this.find('.base-uom-select').val().trim();
+
+        var index = count++;
+        $('.table-uom-list').append('<tr><td><input name="uom[' + index + '][alt_qty]" class="W75PX" value="' + alt_qty + '"></td>' + '<td><input name="uom[' + index + '][alt_uom]" class="W75PX" value="' + alt_uom + '"></td>' + '<td>Equal</td>' + '<td><input name="uom[' + index + '][base_qty]" class="W75PX" value="' + base_qty + '"></td>' + '<td><input name="uom[' + index + '][base_uom]" class="W75PX" value="' + base_uom + '"></td>' + '<td><a href="#" class="text-danger"><i class="fas fa-trash"></i></a></td></tr>');
+      });
+      $next.on('click', function () {
+        var frmData = $('#frm-data-uom').serialize();
+        $.ajax({
+          method: 'post',
+          url: 'add-define-uom',
+          data: frmData,
+          success: function success(data) {
+            if (data.success == true) {
+              toastr.success(data.message, 'UOM Form', {
+                "timeOut": "1500",
+                onHidden: function onHidden() {
+                  location.reload();
+                }
+              });
+            } else if (message.success == false) {
+              toastr.error('Whoops! Something wrong happended');
+            }
+          }
+        });
+      });
+    }
+  }]);
+
+  return UOM;
+}();
+
+var uom = new UOM();
+uom.toggleSwitch($('#switch'));
+uom.defineUOM($('#btn-define-uom'), $('#btn-define-group-uom'));
+
+/***/ }),
+
+/***/ 2:
+/*!********************************************!*\
+  !*** multi ./resources/js/desktop/_uom.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\first-app\resources\js\desktop\_category.js */"./resources/js/desktop/_category.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\first-app\resources\js\desktop\_uom.js */"./resources/js/desktop/_uom.js");
 
 
 /***/ })

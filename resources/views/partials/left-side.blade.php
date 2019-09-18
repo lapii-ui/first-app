@@ -42,6 +42,7 @@
                   </li>
                   <li><a href="#level1_1">Tables</a></li>
                   <li><a href="{{ url('category') }}">Categories</a></li>
+                  <li><a href="{{ url('uom') }}">Unit of Measure</a></li>
                   <li><a href="{{ url('company') }}">Company</a></li>
               </ul>
             </li>
@@ -61,7 +62,7 @@
             </li>
             <li><a class="txt-upper"><i class="fas fa-tags fa-icon"></i> @lang('transactions') <span class="fas fa-chevron-down fa-arrow-right"></span></a>
               <ul class="nav child_menu">
-                <li><a href="tables.html">Tables</a></li>
+                <li><a href="{{ url('get-grouptable') }}">Tables</a></li>
                 <li><a href="tables_dynamic.html">Table Dynamic</a></li>
               </ul>
             </li>

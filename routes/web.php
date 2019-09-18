@@ -60,4 +60,15 @@ Route::get('edit-branch/{id}', 'CompanyController@edit_branch');
 Route::post('update-branch/{id}', 'CompanyController@update_branch');
 Route::get('delete-branch/{id}', 'CompanyController@delete_branch');
 
+Route::get('get-grouptable', 'TableController@get_grouptable');
+Route::get('create-grouptable', 'TableController@create_grouptable');
+Route::post('add-grouptable', 'TableController@add_grouptable');
+Route::get('edit-grouptable/{id}', 'TableController@edit_grouptable');
+Route::post('update-grouptable/{id}', 'TableController@update_grouptable');
+
+Route::get('create-subtable/{id}', 'TableController@create_subtable');
+
+Route::resource('uom', 'UOMController');
+Route::post('add-define-uom', 'UOMController@add_define_uom');
+
 Route::resource('/front', 'FrontEndController');
