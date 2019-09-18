@@ -15,6 +15,7 @@
     <link href="/css/custom.min.css" rel="stylesheet">
     <link href="/css/common.css" rel="stylesheet">
     <link href="/css/uom.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bayon' rel='stylesheet' type='text/css'>
   </head>
 
   <body class="nav-md">

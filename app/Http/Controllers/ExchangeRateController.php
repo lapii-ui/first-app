@@ -28,6 +28,23 @@ class ExchangeRateController extends Controller
     public function edit_exchange($id)
     {
         $exchange = ExchangeRate::where('id', '=', $id)->first();
-        return view('desktop.exchangerates.edit', compact('exchange'));
+        $currencies = Currency::all();
+        return view('desktop.exchangerates.edit', compact('exchange', 'currencies'));
+    }
+    public function update_exchange(ExchangeRateValidationRequest $request, $id)
+    {
+        $exchange = ExchangeRate::where('id', '=', $id)->first();
+        $params = $request->all();
+        $params['default'] = $request->default == 'on' ? '1' : '0';
+        $exchange->update($params);
+        toastr()->success('Update exchange successfully!', 'Exchange Form', ['timeOut' => 1500]);
+        return redirect('get-exchange');
+    }
+    public function delect_exchange($id)
+    {
+        $exchange = ExchangeRate::where('id', '=', $id)->first();
+        $exchange->delete();
+        toastr()->success('Deleted exchange successfully!', 'Exchange form', ['timeOut' => 1500]);
+        return redirect('get-exchange');
     }
 }

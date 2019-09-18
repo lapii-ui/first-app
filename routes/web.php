@@ -76,7 +76,15 @@ Route::get('get-exchange', 'ExchangeRateController@get_exchange');
 Route::get('create-exchange', 'ExchangeRateController@create_exchange');
 Route::post('store-exchange','ExchangeRateController@store_exchange');
 Route::get('edit-exchange/{id}','ExchangeRateController@edit_exchange');
+Route::post('update-exchange/{id}','ExchangeRateController@update_exchange');
+Route::get('delect_exchange/{id}','ExchangeRateController@delect_exchange');
+
+Route::get('get-receipts', 'ReceiptInfoController@get_receipt');
+Route::get('create-receipt','ReceiptInfoController@create_receipt');
+Route::post('store-receipt', 'ReceiptInfoController@store_receipt');
+Route::get('edit-receipt/{id}', 'ReceiptInfoController@edit_receipt');
+Route::post('update-receipt/{id}', 'ReceiptInfoController@update_receipt');
+Route::get('delete-receipt/{id}','ReceiptInfoController@delete_receipt');
 
 Route::resource('uom', 'UOMController');
-
 Route::resource('/front', 'FrontEndController');

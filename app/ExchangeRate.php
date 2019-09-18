@@ -13,7 +13,6 @@ class ExchangeRate extends Model
         'id', 'date_set', 'currency_id', 'amount', 'rate', 'default',
     ];
     public function currencies(){
-        // return $this->belongTo(Currency::class, 'currency_id', 'id');
         return $this->belongsTo('App\Currency', 'currency_id', 'id');
     }
 }
