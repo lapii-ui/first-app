@@ -40,6 +40,7 @@
                       </li>
                     </ul>
                   </li>
+                  <li><a href="#level1_1">Tables</a></li>
                   <li><a href="{{ url('get-grouptables') }}">Tables</a></li>
                   <li><a href="{{ url('get-exchange') }}">Exchange Rate</a></li>
                   <li><a href="{{ url('get-receipts')}}">Receipt Information</a></li>

@@ -54,6 +54,9 @@ Route::resource('company', 'CompanyController');
 Route::post('update-company/{id}', 'CompanyController@update_company');
 Route::get('delete-company/{id}', 'CompanyController@delete_company');
 
+Route::resource('uom', 'UOMController');
+Route::get('create-subtable/{id}', 'TableController@create_subtable');
+
 Route::get('create-branch', 'CompanyController@create_branch');
 Route::post('add-branch', 'CompanyController@add_branch');
 Route::get('edit-branch/{id}', 'CompanyController@edit_branch');
@@ -86,5 +89,4 @@ Route::get('edit-receipt/{id}', 'ReceiptInfoController@edit_receipt');
 Route::post('update-receipt/{id}', 'ReceiptInfoController@update_receipt');
 Route::get('delete-receipt/{id}','ReceiptInfoController@delete_receipt');
 
-Route::resource('uom', 'UOMController');
 Route::resource('/front', 'FrontEndController');
