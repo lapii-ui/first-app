@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -6453,14 +6453,14 @@ var dashboard = new Dashboard();
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!**************************************************!*\
   !*** multi ./resources/js/desktop/_dashboard.js ***!
   \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\first-app\resources\js\desktop\_dashboard.js */"./resources/js/desktop/_dashboard.js");
+module.exports = __webpack_require__(/*! F:\xampp\htdocs\first-app\resources\js\desktop\_dashboard.js */"./resources/js/desktop/_dashboard.js");
 
 
 /***/ })

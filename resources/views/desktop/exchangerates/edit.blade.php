@@ -18,22 +18,12 @@
 
                 <div class="col-md-6">
                     <select name="currency_id", id="currency_id" class="form-control @error('currency_id') is-invalid @enderror">
-                        {{-- <option value="{{$exchange->currency_id}}">{{ $exchange->currencies->name }}</option> --}}
                         @foreach ($currencies as $index => $currency)
-                        <option value="{{ $currency->id }}" {{ $currency->id == $exchange->currency_id ? 'selected' : '' }}>{{ $currency->name }}</option>
+                            <option value="{{ $currency->id }}" {{ $currency->id == $exchange->currency_id ? 'selected' : '' }}>{{ $currency->name }}</option>
                         @endforeach
                     </select>
                 </div>
             </div>
-{{-- 
-            <div class="form-group">
-                <label for="companies_id">Company name</label>
-                <select style="font-family:Battambang;" name="companies_id", id="companies_id" class="form-control">
-                    @foreach ($currencies as $index => $currency)
-                        <option style="font-family:Battambang;" value="{{ $currency->id }}" {{ $currency->id == $exchange->currency_id ? 'selected' : '' }}>{{ $exchange->name }}</option>
-                    @endforeach
-                </select>
-            </div> --}}
 
             <div class="form-group row">
                 <label for="amount" class="col-md-4 col-form-label text-md-right">{{ __('Amount') }}</label>
@@ -54,7 +44,7 @@
                 </div>
             </div>
             <div class="col-md-10 remove-pdd">
-                <button type="submit" class="remove-mg pull-right">@lang('submit')</button>
+                <button type="submit" class="remove-mg pull-right">@lang('Update')</button>
             </div>
         </form>
     </div>

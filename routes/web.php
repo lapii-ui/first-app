@@ -82,7 +82,7 @@ Route::get('create-exchange', 'ExchangeRateController@create_exchange');
 Route::post('store-exchange','ExchangeRateController@store_exchange');
 Route::get('edit-exchange/{id}','ExchangeRateController@edit_exchange');
 Route::post('update-exchange/{id}','ExchangeRateController@update_exchange');
-Route::get('delect_exchange/{id}','ExchangeRateController@delect_exchange');
+Route::get('delete_exchange/{id}','ExchangeRateController@delete_exchange');
 
 Route::get('get-receipts', 'ReceiptInfoController@get_receipt');
 Route::get('create-receipt','ReceiptInfoController@create_receipt');
@@ -90,5 +90,19 @@ Route::post('store-receipt', 'ReceiptInfoController@store_receipt');
 Route::get('edit-receipt/{id}', 'ReceiptInfoController@edit_receipt');
 Route::post('update-receipt/{id}', 'ReceiptInfoController@update_receipt');
 Route::get('delete-receipt/{id}','ReceiptInfoController@delete_receipt');
+
+Route::get('get-pricelists', 'PriceListController@get_pricelists');
+Route::get('create-pricelist', 'PriceListController@create_pricelist');
+Route::post('store-pricelist', 'PriceListController@store_pricelist');
+Route::get('edit-pricelist/{id}', 'PriceListController@edit_pricelist');
+Route::post('update-pricelist/{id}', 'PriceListController@update_pricelist');
+Route::get('delete-pricelist/{id}', 'PricelistController@delete_pricelist');
+
+Route::get('get-businesspartners', 'BusinessPartnerController@get_businesspartners');
+Route::get('create-businesspartner', 'BusinessPartnerController@create_businesspartner');
+Route::post('store-businesspartner', 'BusinessPartnerController@store_businesspartner');
+Route::get('edit-businesspartner/{id}', 'BusinessPartnerController@edit_businesspartner');
+Route::post('update-businesspartner/{id}','BusinessPartnerController@update_businesspartner');
+Route::get('delete-businesspartner/{id}', 'BusinessPartnerController@delete_businesspartner');
 
 Route::resource('/front', 'FrontEndController');

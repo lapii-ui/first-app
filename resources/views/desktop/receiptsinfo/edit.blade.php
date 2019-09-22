@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="col-md-10 remove-pdd">
-                <button type="submit" class="remove-mg pull-right">@lang('submit')</button>
+                <button type="submit" class="remove-mg pull-right">@lang('Update')</button>
             </div>
         </form>
     </div>
