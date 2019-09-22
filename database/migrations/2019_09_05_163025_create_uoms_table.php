@@ -14,28 +14,28 @@ class CreateUomsTable extends Migration
     public function up()
     {
         Schema::create('uoms', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('code');
             $table->string('name');
             $table->boolean('is_delete');
             $table->timestamps();
         });
         Schema::create('group_uoms', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('code');
             $table->string('name');
             $table->boolean('is_delete');
             $table->timestamps();
         });
         Schema::create('group_define_uoms', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('uom_id')->unsigned();
             $table->foreign('uom_id')->references('id')->on('uoms')->onDelete('cascade');
             $table->integer('group_uom_id')->unsigned();
             $table->foreign('group_uom_id')->references('id')->on('group_uoms')->onDelete('cascade');
-            $table->decimal('alt_qty', 18,2);
+            $table->decimal('alt_qty', 18, 2);
             $table->string('operator');
-            $table->decimal('base_qty', 18,2);
+            $table->decimal('base_qty', 18, 2);
             $table->boolean('is_delete');
             $table->timestamps();
         });
