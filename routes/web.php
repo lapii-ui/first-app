@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('upload-image', 'HomeController@uploadTempImage')->name('upload-image');
 Route::get('localization/{locale}', 'LanguageController@SwitchLanguage');
 
 Route::get('get-profile', 'UserController@get_user');

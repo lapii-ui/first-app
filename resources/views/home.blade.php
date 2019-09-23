@@ -1,16 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    {{--  @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
+    {{--  <progress value="0" max="100" id="uploader">0%</progress>
+    <input type="file" value="upload" id="fileButton">  --}}
 
-    <div>{{ Auth::user()->name }}- role {{ Auth::user()->role }}</div>  --}}
-
-    <progress value="0" max="100" id="uploader">0%</progress>
-    <input type="file" value="upload" id="fileButton">
+    <div class="resp_img"></div>
+    <input type="file" id="img-upload-temp">
 @endsection
 
 @section('js')
