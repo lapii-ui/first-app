@@ -232,7 +232,7 @@ uom.defineUOM($('#btn-define-uom'), $('#btn-define-group-uom'));
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\xampp\htdocs\first-app\resources\js\desktop\_uom.js */"./resources/js/desktop/_uom.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\first-app\resources\js\desktop\_uom.js */"./resources/js/desktop/_uom.js");
 
 
 /***/ })

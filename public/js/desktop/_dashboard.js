@@ -6432,19 +6432,51 @@ if (!firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.apps.length) {
 var Dashboard = function Dashboard() {
   _classCallCheck(this, Dashboard);
 
-  var uploader = document.getElementById('uploader');
-  var fileButton = document.getElementById('fileButton');
-  fileButton.addEventListener('change', function (e) {
-    var file = e.target.files[0];
-    var storageRef = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.storage().ref('images' + file.name);
-    var task = storageRef.put(file);
-    task.on('state_changed', function progress(snapshot) {
-      var percentage = snapshot.bytesTransferred / snapshot.totalBytes * 100;
-      uploader.value = percentage;
-    }, function error(err) {}, function complete() {
-      task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-        console.log('Fuck u bitch at=>', downloadURL);
-      });
+  // var uploader = document.getElementById('uploader');
+  // var fileButton = document.getElementById('fileButton');
+  // fileButton.addEventListener('change', function(e){
+  //     var file = e.target.files[0];
+  //     var storageRef = firebase.storage().ref('images/img_' + file.name);
+  //     var task = storageRef.put(file);
+  //     task.on('state_changed',
+  //         function progress(snapshot){
+  //             var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  //             uploader.value = percentage;
+  //         },
+  //         function error(err){
+  //         },
+  //         function complete(){
+  //             task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+  //                 console.log('Fuck u bitch at=>', downloadURL);
+  //               });
+  //         }
+  //     );
+  // });
+  $('#img-upload-temp').on('change', function () {
+    var formData = new FormData();
+    formData.append('file', $(this)[0].files[0]); // let _file = e.target.files[0];
+
+    console.log($(this)[0].files[0]);
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      url: '/upload-image',
+      type: 'POST',
+      dataType: 'json',
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function success(data) {
+        // if ( data.success == true) {
+        //     $('#Path').val(data.url);
+        //     $('._filename').val(data.filename);
+        $('.resp_img').html('<div class="thumbnail" style="width: 100px; height: 65px"><img src="' + data.url + '" class="portrait"/></div>'); // }
+        // else {
+        //     alertify.error(data.message);
+        // }
+      }
     });
   });
 };

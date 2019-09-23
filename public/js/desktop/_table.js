@@ -166,7 +166,7 @@ var table = new Table();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\xampp\htdocs\first-app\resources\js\desktop\_table.js */"./resources/js/desktop/_table.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\first-app\resources\js\desktop\_table.js */"./resources/js/desktop/_table.js");
 
 
 /***/ })
