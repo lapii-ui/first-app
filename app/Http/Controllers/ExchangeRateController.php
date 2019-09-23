@@ -40,7 +40,7 @@ class ExchangeRateController extends Controller
         toastr()->success('Update exchange successfully!', 'Exchange Form', ['timeOut' => 1500]);
         return redirect('get-exchange');
     }
-    public function delect_exchange($id)
+    public function delete_exchange($id)
     {
         $exchange = ExchangeRate::where('id', '=', $id)->first();
         $exchange->delete();

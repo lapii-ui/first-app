@@ -26,7 +26,7 @@
                     <td class="text-center align-middle">{{ $exch ->default == 1 ? 'Default' : 'Not default'}}</td>
                     <td class="text-center align-middle">
                     <a href=" {{ url('edit-exchange/'.$exch->id) }}"><i class="far fa-edit"></i></a> |
-                    <a href="{{ url('delect_exchange/'.$exch->id) }}" class="text-danger"><i class="fas fa-trash"></i></a>
+                    <a href="{{ url('delete_exchange/'.$exch->id) }}" class="text-danger"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
                 @endforeach
