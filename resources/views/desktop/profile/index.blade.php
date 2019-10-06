@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <!-- <h2>test</h2> -->
     <div class="title-content-info">List of User Login <a href="{{ url('create-profile') }}"><i class="far fa-plus-square icon-create pull-right"></i></a></div>
     <div class="row col-md-9 well">
         <table class="table table-bordered">
