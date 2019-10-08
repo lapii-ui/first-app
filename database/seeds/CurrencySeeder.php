@@ -13,39 +13,39 @@ class CurrencySeeder extends Seeder
     {
         Currency::create([
             'name' => 'Riel',
-            'symbols' => '(R)',
+            'symbols' => '(R)'
         ]);
         Currency::create([
             'name' => 'Dollar',
-            'symbols' => '($)',
+            'symbols' => '($)'
         ]);
         Currency::create([   
             'name' => 'Euro',        
-            'symbols' => '(€)',
+            'symbols' => '(€)'
         ]);
         Currency::create([
             'name' => 'Yuan',
-            'symbols' => '(¥)',
+            'symbols' => '(¥)'
         ]);
         Currency::create([
             'name' => 'Thailand',
-            'symbols' => '(฿)',
+            'symbols' => '(฿)'
         ]);
         Currency::create([
             'name' => 'Vietnam',
-            'symbols' => '(₫)',
+            'symbols' => '(₫)'
         ]);
         Currency::create([
             'name' => 'Russia',
-            'symbols' => '(₽)',
+            'symbols' => '(₽)'
         ]);
         Currency::create([
             'name' => 'Philippines',
-            'symbols' => '(₱)',
+            'symbols' => '(₱)'
         ]);
         Currency::create([
             'name' => 'Qata',
-            'symbols' => '(﷼)',
+            'symbols' => '(﷼)'
         ]);
     }
 }
